@@ -95,8 +95,25 @@ function App() {
     return () => clearTimeout(timer)
   }, [currentQuestion, isQuizStarted])
 
+  const handleQuestionJump = (index: number) => {
+    // Set the current question index to the selected index
+    useQuizStore.setState({ currentQuestionIndex: index });
+  };
+
   return (
     <div className="container">
+      {/* Page Number Jump Buttons */}
+      <div className="page-jump-buttons">
+        {questions.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleQuestionJump(index)}
+            className={`page-jump-button ${currentQuestionIndex === index ? 'active' : ''}`}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
       {/* Hidden calculators for height measurement */}
       <div style={{ visibility: 'hidden', position: 'absolute', zIndex: -1, width: '100%', maxWidth: '900px' }}>
         {currentQuestion && (
@@ -168,7 +185,9 @@ function App() {
                 ) : (
                   <>
                     <span className="key-icon">→</span>
-                    <span>キーを押して次の問題へ</span>
+                    <span id="navigationText">
+                      {isAnswerShown ? 'キーを押して次の問題へ' : 'キーを押して解答を表示'}
+                    </span>
                   </>
                 )}
               </div>

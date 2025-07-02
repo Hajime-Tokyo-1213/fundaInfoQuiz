@@ -365,3 +365,29 @@ body {
         font-size: 48px;
     }
 }
+
+/* Page Jump Buttons Styles */
+.page-jump-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.page-jump-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.page-jump-button.active {
+  background-color: #667eea;
+  color: white;
+}
+
+.page-jump-button:hover {
+  background-color: #ddd;
+}
