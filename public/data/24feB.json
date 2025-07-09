@@ -32,7 +32,7 @@
     },
     {
       "id": 2,
-      "body": "次のプログラム中の空欄に入れる正しい答えを、解答群の中から選べ。関数 convDecimal は、引数として与えられた、“0”と“1”だけから成る、1文字以上の文字列を、符号なしの2進数と解釈したときの整数値を返す。例えば、引数として“10010”を与えると18が返る。関数 convDecimal が利用する関数 int は、引数で与えられた文字が“0”なら整数値0を返し、“1”なら整数値1を返す。\n\n〔プログラム〕\n○整数型: convDecimal(文字列型: binary)\n  整数型: i, length, result ← 0 \n  length ← binaryの文字数 \n  for (i を 1 から length まで 1 ずつ増やす)\n    result ← ＿＿＿ \n  endfor \n  return result",
+      "body": "次のプログラム中の空欄に入れる正しい答えを、解答群の中から選べ。関数 convDecimal は、引数として与えられた、「0」と「1」だけから成る、1文字以上の文字列を、符号なしの2進数と解釈したときの整数値を返す。例えば、引数として「10010」を与えると18が返る。関数 convDecimal が利用する関数 int は、引数で与えられた文字が「0」なら整数値0を返し、「1」なら整数値1を返す。\n\n〔プログラム〕\n○整数型: convDecimal(文字列型: binary)\n  整数型: i, length, result ← 0 \n  length ← binaryの文字数 \n  for (i を 1 から length まで 1 ずつ増やす)\n    result ← ＿＿＿ \n  endfor \n  return result",
       "choices": [
         {
           "text": "ア: result ＋ int(binary の (length － i ＋ 1)文字目の文字)",
@@ -55,7 +55,7 @@
     },
     {
       "id": 4,
-      "body": "次の記述中の空欄に入れる正しい答えを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。関数 merge は、昇順に整列された整数型の配列 data1 及び data2 を受け取り、これらを併合してできる昇順に整列された整数型の配列を返す。関数 merge を merge({2, 3}, {1, 4}) として呼び出すと，/*** α ***/ の行は [ ＿＿＿ ] 。\n\n〔プログラム〕\n○整数型の配列: merge(整数型の配列: data1, 整数型の配列: data2)\n ... (途中省略) ...\n while (j ≦ n2)\n   work[k] ← data2[j] /*** α ***/\n   j ← j ＋ 1\n   k ← k ＋ 1\n endwhile\n return work",
+      "body": "次の記述中の空欄に入れる正しい答えを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。関数 merge は、昇順に整列された整数型の配列 data1 及び data2 を受け取り、これらを併合してできる昇順に整列された整数型の配列を返す。関数 merge を merge({2, 3}, {1, 4}) として呼び出すと，/*** α ***/ の行は [ ＿＿＿ ] 。\n\n〔プログラム〕\n○整数型の配列: merge(整数型の配列: data1, 整数型の配列: data2)\n 整数型: n1 ← data1の要素数\n 整数型: n2 ← data2の要素数\n 整数型の配列: work ← {(n1 ＋ n2)個の 未定義の値}\n 整数型: i ← 1\n 整数型: j ← 1\n 整数型: k ← 1\n while ((i ≦ n1) and (j ≦ n2))\n if (data1[i] ≦ data2[j])\n work[k] ← data1[i]\n i ← i ＋ 1\n else\n work[k] ← data2[j]\n j ← j ＋ 1\n endif\n k ← k ＋ 1\n endwhile\nwhile (i ≦ n1)\n work[k] ← data1[i]\n i ← i ＋ 1\n k ← k ＋ 1\n endwhile\n while (j ≦ n2)\n work[k] ← data2[j] /*** α ***/\n j ← j ＋ 1\n k ← k ＋ 1\n endwhile\n return work",
       "choices": [
         {
           "text": "ア: 実行されない",

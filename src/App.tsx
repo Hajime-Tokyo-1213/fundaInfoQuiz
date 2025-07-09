@@ -126,7 +126,9 @@ function App() {
               <div className="question-number">
                 問題 {currentQuestionIndex + 1} / {questions.length}
               </div>
-              <div className="question">{currentQuestion.body}</div>
+              <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
+                {currentQuestion.body}
+              </div>
               {currentQuestion.imageUrl && (
                 <div className="question-image-container">
                   <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
@@ -163,7 +165,9 @@ function App() {
               <div className="question-number">
                 問題 {currentQuestionIndex + 1} / {questions.length}
               </div>
-              <div className="question">{currentQuestion.body}</div>
+              <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
+                {currentQuestion.body}
+              </div>
               {currentQuestion.imageUrl && (
                 <div className="question-image-container">
                   <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
@@ -213,7 +217,9 @@ function App() {
             <div className="question-number">
               問題 {currentQuestionIndex + 1} / {questions.length}
             </div>
-            <div className="question">{currentQuestion.body}</div>
+            <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
+                {currentQuestion.body}
+              </div>
             {currentQuestion.imageUrl && (
               <div className="question-image-container">
                 <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
