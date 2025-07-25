@@ -105,6 +105,12 @@ function App() {
     <div className="container">
       {/* Page Number Jump Buttons */}
       <div className="page-jump-buttons">
+        {/* ここに「トップページに戻る」ボタンを追加します */}
+        {isQuizStarted && (
+          <button onClick={backToChapterSelection} className="back-to-home-button">
+            トップページに戻る
+          </button>
+        )}
         {questions.map((_, index) => (
           <button
             key={index}
