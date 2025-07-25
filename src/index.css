@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 全ての要素でbox-sizingをborder-boxに統一 */
 }
 
 body {
@@ -16,18 +16,48 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
 }
 
 .quiz-card {
     background: rgba(255, 255, 255, 0.98);
     border-radius: 24px;
-    padding: 50px;
+    padding: 50px; /* ナビゲーションヒントなどの固定コンテンツのためにパディングを残す */
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
-    animation: slideIn 0.5s ease-out;
+    /* animation: slideIn 0.5s ease-out; はここでは削除 */
     border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden; /* quiz-content-wrapperがはみ出すのを隠す */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* quiz-content-wrapper の追加 */
+.quiz-content-wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+    position: relative;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* question-section の追加 */
+.question-section {
+    flex-shrink: 0;
+    width: 100%;
+    /* quiz-cardのパディングと合わせるか、個別に調整 */
+    padding: 0 25px; /* 左右に25pxのパディングを追加 */
+    box-sizing: border-box; /* paddingを含めて幅を計算 */
+    display: flex;
+    flex-direction: column;
+    /* 長いコンテンツの場合にスクロール可能にするための設定（必要であれば） */
+    /* overflow-y: auto; */
+    /* max-height: calc(100vh - 200px); */ /* 例: 画面高さからヘッダー・フッター分を引く */
 }
 
 @keyframes slideIn {
@@ -67,7 +97,7 @@ body {
 }
 
 .question {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 40px;
@@ -76,6 +106,9 @@ body {
     background: #f8f9ff;
     border-radius: 16px;
     border: 2px solid #e8ecff;
+    word-break: break-word; /* 長い単語がはみ出さないように改行 */
+    overflow-wrap: break-word; /* modern browsers */
+    white-space: pre-wrap; /* 既存の改行を保持 */
 }
 
 .question-image-container {
@@ -106,7 +139,7 @@ body {
     position: relative;
     overflow: hidden;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     color: #34495e;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -197,9 +230,9 @@ body {
 }
 
 .explanation-choice {
-    font-weight: 600;
-    color: #34495e;
-    margin-bottom: 5px;
+    font-weight: 700; /* もし太くしたい場合は bold または 700 などに調整してください */
+    color: #34495e; /* 色を統一するために追加。必要なければ削除 */
+    margin-bottom: 5px; /* 必要であればマージンを追加 */
 }
 
 .explanation-text {
@@ -220,7 +253,12 @@ body {
 }
 
 .navigation-hint {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
     text-align: center;
     color: #667eea;
     font-size: 16px;
@@ -261,8 +299,6 @@ body {
     font-size: 56px;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 35px;
 }
 
@@ -322,6 +358,55 @@ body {
     font-size: 15px;
     line-height: 1.7;
 }
+p {
+    margin-bottom: 0px; /* 必要に応じて 0px 以外に調整してもOK */
+}
+
+/* --- ここからテーブルのグローバルスタイル --- */
+
+/* テーブルのタイトルにのみ適用されるスタイル */
+.table-caption {
+    text-align: center; /* ★ここを追加！テキストを右揃えにします */
+    margin-bottom: -800px; /* 必要であれば、タイトルとテーブルの間の余白を調整 */
+}
+
+/* 数字を右揃えにするクラス */
+.align-right {
+    text-align: right;
+}
+
+/* a, b を中央揃えにするクラス */
+.align-center {
+    text-align: center;
+}
+
+
+/* テーブル全体の基本的なスタイル */
+table {
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    border-collapse: collapse; /* セルの境界線を結合し、きれいな罫線にする */
+    margin-bottom: -50px; /* テーブルの下に少し余白を作る */
+    table-layout: fixed; /* ★ここが重要: 列の幅を固定し、内容によってずれないようにする */
+    margin-top: 0px; /* ★追加: 単位やタイトルとの間の不要な上余白をなくす */
+}
+
+/* ヘッダーセルとデータセルの共通スタイル */
+th, td {
+    border: 1px solid #ddd; /* ★罫線を表示 */
+    padding: 12px 15px; /* セル内のテキストと罫線の間の余白 */
+    text-align: left; /* テキストを左寄せに */
+    vertical-align: top; /* 縦方向の配置を上寄せに */
+    font-size: 18px;
+}
+
+/* ヘッダーセル（th）にのみ適用されるスタイル */
+th {
+    background-color: #f2f2f2; /* ヘッダーの背景色を薄い灰色にする */
+    font-weight: bold; /* テキストを太字にする */
+    color: #333; /* 文字色を濃い灰色にする */
+}
+
+/* --- ここまでテーブルのグローバルスタイル --- */
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
@@ -330,39 +415,137 @@ body {
     }
 
     .quiz-card {
-        padding: 30px 20px;
+        padding: 25px 15px; /* スマホでのquiz-cardのパディングをさらに削減 */
+        width: 100%; 
+        margin: auto; /* 縮小したカードを中央に配置する */
+    }
+
+    .question-section {
+        padding: 0 10px; /* スマホでのquestion-sectionの左右パディングを微調整 */
     }
 
     .question {
-        font-size: 18px;
-        padding: 20px;
-        margin-bottom: 30px;
+        font-size: 13px; /* スマホでのフォントサイズをさらに小さく */
+        padding: 15px; /* スマホでのパディング調整 */
+        margin-bottom: 20px;
+        line-height: 1.4; /* 行の高さを詰める */
+    }
+
+    .question-number {
+        font-size: 13px; /* 問題番号も調整 */
+        margin-bottom: 8px;
     }
 
     .choices {
-        gap: 15px;
+        gap: 10px; /* 選択肢間のスペースを詰める */
     }
 
     .choice {
-        padding: 20px;
-        font-size: 16px;
+        padding: 15px 18px; /* 選択肢のパディング調整 */
+        font-size: 13px; /* 選択肢のフォントサイズも調整 */
+    }
+    .choice-text {
+        gap: 10px;
     }
 
     .explanation-section {
-        margin-top: 30px;
-        padding: 20px;
+        margin-top: 20px;
+        padding: 15px;
     }
 
     .explanation-title {
-        font-size: 18px;
+        font-size: 15px;
+    }
+    
+    .explanation-text {
+        font-size: 12px; /* 解説テキストのフォントサイズも調整 */
+        line-height: 1.5;
+    }
+
+    .navigation-hint {
+        font-size: 13px;
+        bottom: 10px;
+        gap: 5px;
+    }
+    .key-icon {
+        padding: 2px 6px;
+    }
+
+    .progress-bar {
+        margin-bottom: 15px;
     }
 
     .result-title {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .result-score {
-        font-size: 48px;
+        font-size: 40px;
+    }
+    .result-message {
+        font-size: 16px;
+    }
+    .restart-button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+    p {
+        margin-bottom: 0px; /* 必要に応じて 0px 以外に調整してもOK */
+    }
+
+    /* テーブルのタイトルにのみ適用されるスタイル */
+.table-caption {
+    text-align: center; /* ★ここを追加！テキストを右揃えにします */
+    margin-bottom: 20px; /* 必要であれば、タイトルとテーブルの間の余白を調整 */
+}
+
+
+    
+    /* 数字を右揃えにするクラス */
+    .align-right {
+    text-align: right;
+    }
+
+    /* a, b を中央揃えにするクラス */
+    .align-center {
+    text-align: center;
+    }
+
+    
+    /* レスポンシブテーブルのコンテナスタイル */
+    .table-responsive {
+        /* 横スクロールはさせないので overflow-x: auto; は必要ありませんが、
+           もし他の目的で残すなら、このまま残しても直接的な問題は起こしません。 */
+        /* overflow-x: auto; */
+        -webkit-overflow-scrolling: touch;
+
+        
+        
+        /* 白いカードのパディングを相殺し、テーブルを画面端まで広げるための調整 */
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* レスポンシブテーブル本体のスタイル */
+    .table-responsive table {
+        width: auto;      /* ★テーブルの幅をコンテンツに合わせて自動調整 */
+        /* min-width: 70%; を以下に変更または削除 */
+        min-width: unset; /* ★これに変更！テーブルが内容（改行されたテキスト）に合わせて最小限の幅になります。 */
+                          /* または min-width: auto; でも可 */
+        
+        font-size: 10px; /* ★重要: font-size: 6px は非常に小さく読めません。
+                             最低でも12px～14px程度をおすすめします。 */
+                             /* ここを調整して読みやすいサイズにしてください。 */
+    }
+    
+    /* レスポンシブテーブルのセル（th, td）のスタイル */
+    .table-responsive th,
+    .table-responsive td {
+        padding: 5px 8px; /* スマホ用のセル内のパディングを調整 */
+        white-space: normal; /* ★★★ここを変更！ 'nowrap' から 'normal' へ変更★★★
+                                  これにより、セル内のテキストが自動的に改行されるようになります。 */
     }
 }
 
@@ -371,16 +554,18 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  flex-wrap: wrap; /* ボタンが多すぎる場合に折り返す */
 }
 
 .page-jump-button {
-  margin: 0 5px;
-  padding: 5px 10px;
+  margin: 2px 3px; /* ボタン間の余白を小さく */
+  padding: 4px 8px; /* ボタンのパディングを小さく */
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #f0f0f0;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 12px; /* ボタンのフォントサイズを小さく */
 }
 
 .page-jump-button.active {

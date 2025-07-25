@@ -27,7 +27,8 @@ function App() {
   // キーボードナビゲーションを有効にする
   useKeyboardNav()
   // スワイプナビゲーションを有効にする
-  useSwipeNav()
+  // ここではまだquizCardRefを渡す（次のステップでquizContentWrapperRefにする）
+  useSwipeNav() 
 
   const [cardHeight, setCardHeight] = useState<number | 'auto'>('auto')
   const questionViewRef = useRef<HTMLDivElement>(null)
@@ -55,8 +56,8 @@ function App() {
     const fetchQuizData = async () => {
       try {
         const [chaptersResponse, glossaryResponse] = await Promise.all([
-          fetch('/data/questions.json'),
-          fetch('/data/words.json'),
+          fetch(`${import.meta.env.BASE_URL}data/questions.json`),
+          fetch(`${import.meta.env.BASE_URL}data/words.json`), 
         ]);
 
         if (!chaptersResponse.ok || !glossaryResponse.ok) {
@@ -119,87 +120,96 @@ function App() {
         {currentQuestion && (
           <>
             {/* Question View Calculator */}
+            {/* ここでも新しい構造を反映させることで、計算が正確になります */}
             <div className="quiz-card" ref={questionViewRef}>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-              </div>
-              <div className="question-number">
-                問題 {currentQuestionIndex + 1} / {questions.length}
-              </div>
-              <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
-                {currentQuestion.body}
-              </div>
-              {currentQuestion.imageUrl && (
-                <div className="question-image-container">
-                  <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
+                <div className="quiz-content-wrapper">
+                    <div className="question-section">
+                        <div className="progress-bar">
+                            <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+                        </div>
+                        <div className="question-number">
+                            問題 {currentQuestionIndex + 1} / {questions.length}
+                        </div>
+                        <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentQuestion.body }}>
+                        </div>
+                        {currentQuestion.imageUrl && (
+                            <div className="question-image-container">
+                                <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
+                            </div>
+                        )}
+                        <div className="choices">
+                            <ChoiceList
+                                choices={currentQuestion.choices}
+                                correctChoiceIndex={currentQuestion.correctChoiceIndex}
+                                isAnswerShown={false}
+                            />
+                        </div>
+                    </div> {/* .question-section 終了 */}
+                </div> {/* .quiz-content-wrapper 終了 */}
+                <div className="navigation-hint">
+                    {isTouchDevice ? (
+                        <>
+                            <span className="key-icon">←</span>
+                            <span>スワイプ</span>
+                            <span className="key-icon">→</span>
+                        </>
+                    ) : (
+                        <>
+                            <span className="key-icon">→</span>
+                            <span>キーを押して解答を表示</span>
+                        </>
+                    )}
                 </div>
-              )}
-              <div className="choices">
-                <ChoiceList
-                  choices={currentQuestion.choices}
-                  correctChoiceIndex={currentQuestion.correctChoiceIndex}
-                  isAnswerShown={false}
-                />
-              </div>
-              <div className="navigation-hint">
-                {isTouchDevice ? (
-                  <>
-                    <span className="key-icon">←</span>
-                    <span>スワイプ</span>
-                    <span className="key-icon">→</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="key-icon">→</span>
-                    <span>キーを押して解答を表示</span>
-                  </>
-                )}
-              </div>
             </div>
 
             {/* Explanation View Calculator */}
+            {/* ここでも新しい構造を反映させることで、計算が正確になります */}
             <div className="quiz-card" ref={explanationViewRef} style={{ marginTop: '20px' }}>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-              </div>
-              <div className="question-number">
-                問題 {currentQuestionIndex + 1} / {questions.length}
-              </div>
-              <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
-                {currentQuestion.body}
-              </div>
-              {currentQuestion.imageUrl && (
-                <div className="question-image-container">
-                  <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
+                <div className="quiz-content-wrapper">
+                    <div className="question-section">
+                        <div className="progress-bar">
+                            <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+                        </div>
+                        <div className="question-number">
+                            問題 {currentQuestionIndex + 1} / {questions.length}
+                        </div>
+                        <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentQuestion.body }}>
+                        </div>
+                        {currentQuestion.imageUrl && (
+                            <div className="question-image-container">
+                                <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
+                            </div>
+                        )}
+                        <ExplanationPanel
+                            choices={currentQuestion.choices}
+                            correctChoiceIndex={currentQuestion.correctChoiceIndex}
+                            isAnswerShown={true}
+                            question={currentQuestion}
+                        />
+                    </div> {/* .question-section 終了 */}
+                </div> {/* .quiz-content-wrapper 終了 */}
+                <div className="navigation-hint">
+                    {isTouchDevice ? (
+                        <>
+                            <span className="key-icon">←</span>
+                            <span>スワイプ</span>
+                            <span className="key-icon">→</span>
+                        </>
+                    ) : (
+                        <>
+                            <span className="key-icon">→</span>
+                            <span id="navigationText">
+                                {isAnswerShown ? 'キーを押して次の問題へ' : 'キーを押して解答を表示'}
+                            </span>
+                        </>
+                    )}
                 </div>
-              )}
-              <ExplanationPanel
-                choices={currentQuestion.choices}
-                correctChoiceIndex={currentQuestion.correctChoiceIndex}
-                isAnswerShown={true}
-                question={currentQuestion}
-              />
-              <div className="navigation-hint">
-                {isTouchDevice ? (
-                  <>
-                    <span className="key-icon">←</span>
-                    <span>スワイプ</span>
-                    <span className="key-icon">→</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="key-icon">→</span>
-                    <span id="navigationText">
-                      {isAnswerShown ? 'キーを押して次の問題へ' : 'キーを押して解答を表示'}
-                    </span>
-                  </>
-                )}
-              </div>
             </div>
           </>
         )}
       </div>
 
+      {/* ★★★ このメインの quiz-card 部分を以下の内容で完全に置き換えてください！ ★★★ */}
       <div className="quiz-card" id="quizCard" style={{ minHeight: cardHeight }}>
         {!isQuizStarted ? (
           chapters.length > 0 ? (
@@ -211,35 +221,41 @@ function App() {
           )
         ) : !isQuizFinished && currentQuestion ? (
           <>
-            <div className="progress-bar">
-              <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-            </div>
-            <div className="question-number">
-              問題 {currentQuestionIndex + 1} / {questions.length}
-            </div>
-            <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }}>
-                {currentQuestion.body}
-              </div>
-            {currentQuestion.imageUrl && (
-              <div className="question-image-container">
-                <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
-              </div>
-            )}
-            {!isAnswerShown && (
-              <div className="choices" id="choicesContainer">
-                <ChoiceList
+            <div className="quiz-content-wrapper" id="quizContentWrapper"> {/* quiz-content-wrapper を追加し、IDを付与 */}
+              <div className="question-section"> {/* question-section を追加 */}
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+                </div>
+                <div className="question-number">
+                  問題 {currentQuestionIndex + 1} / {questions.length}
+                </div>
+                <div className="question" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentQuestion.body }}>
+                </div>
+                {currentQuestion.imageUrl && (
+                  <div className="question-image-container">
+                    <img src={currentQuestion.imageUrl} alt="問題の図" className="question-image" />
+                  </div>
+                )}
+                {!isAnswerShown && (
+                  <div className="choices" id="choicesContainer">
+                    <ChoiceList
+                      choices={currentQuestion.choices}
+                      correctChoiceIndex={currentQuestion.correctChoiceIndex}
+                      isAnswerShown={isAnswerShown}
+                    />
+                  </div>
+                )}
+                {/* 解説パネルもquestion-section内に含めて一緒にスライドさせる */}
+                <ExplanationPanel
                   choices={currentQuestion.choices}
                   correctChoiceIndex={currentQuestion.correctChoiceIndex}
                   isAnswerShown={isAnswerShown}
+                  question={currentQuestion}
                 />
-              </div>
-            )}
-            <ExplanationPanel
-              choices={currentQuestion.choices}
-              correctChoiceIndex={currentQuestion.correctChoiceIndex}
-              isAnswerShown={isAnswerShown}
-              question={currentQuestion}
-            />
+              </div> {/* .question-section 終了 */}
+            </div> {/* .quiz-content-wrapper 終了 */}
+
+            {/* ナビゲーションヒントは固定したいので、quiz-content-wrapper の外、quiz-card の直下に残す */}
             <div className="navigation-hint">
               {isTouchDevice ? (
                 <>
@@ -266,6 +282,7 @@ function App() {
           />
         )}
       </div>
+      {/* ★★★ ここまで ★★★ */}
     </div>
   )
 }
