@@ -1,13 +1,15 @@
-// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // ここにあなたのフォークしたリポジトリ名を正確に入力してください
-const repoName = 'fundaInfoQuiz'; // 例: 'my-forked-repo'
+// GitHubリポジトリの名前が 'fundaInfoQuiz' であれば、このままでOKです。
+const repoName = 'fundaInfoQuiz';
 
-export default defineConfig({
-  plugins: [react()],
-  // ここに 'base' オプションを追加
-  base: `/${repoName}/`, // リポジトリ名に合わせて変更
-
-})
+export default defineConfig(({ command }) => { // command 引数を追加
+  return {
+    plugins: [react()],
+    // 'build' コマンドの場合のみ base オプションを適用
+    // ローカル開発 ('dev') の場合は '/' になるため、今まで通りローカルで動作します
+    base: command === 'build' ? `/${repoName}/` : '/',
+  };
+});

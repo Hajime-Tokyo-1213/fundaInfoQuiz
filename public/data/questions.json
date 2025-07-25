@@ -49,7 +49,7 @@
     },
     {
       "id": 4,
-      "body": "MTBF は 4,000 時間，MTTR は 1,000 時間の装置がある。今後の 6 年間は，予防保守によって MTBF を前年に比べて毎年 100 時間ずつ改善し，遠隔保守によって MTTR を前年に比べて毎年 100 時間ずつ改善していく計画である。6 年経過後の稼働率は幾らか。",
+      "body": "MTBF は 4,000 時間，MTTR は 1,000 時間の装置がある。\n今後の 6 年間は，予防保守によって MTBF を前年に比べて毎年 100 時間ずつ改善し，遠隔保守によって MTTR を前年に比べて毎年 100 時間ずつ改善していく計画である。6 年経過後の稼働率は幾らか。",
       "choices": [
         {
           "text": "ア: 0.88",
@@ -95,7 +95,7 @@
     },
     {
       "id": 6,
-      "body": "“商品”表に対する SQL 文と同じ結果が得られる SELECT 文はどれか。\n\n| 商品 ID | 商品名称 | 仕入先 ID | 単価 |\n| :---: | :---- | :---: | ----: |\n| S001  | 冷蔵庫  | M001  | 155,000 |\n| S002  | 食器洗い機  | M002  | 85,000 |\n| S003  | 電子レンジ  | M003  | 78,000 |\n| S004  | 炊飯器  | M003  | 32,000 |\n| S005  | コーヒーメーカー  | M004  | 15,000 |\n| S006  | ホットプレート  | M004  | 12,000 |\n\n〔SQL 文〕\nSELECT * FROM 商品 WHERE 仕入先 ID IN ('M002', 'M004')",
+      "body": "“商品”表に対する SQL 文と同じ結果が得られる SELECT 文はどれか。<h4>商品</h4><table><thead><tr><th>商品 ID</th><th>商品名称</th><th>仕入先 ID</th><th>単価</th></tr></thead><tbody><tr><td>S001</td><td>冷蔵庫</td><td>M001</td><td>155,000</td></tr><tr><td>S002</td><td>食器洗い機</td><td>M002</td><td>85,000</td></tr><tr><td>S003</td><td>電子レンジ</td><td>M003</td><td>78,000</td></tr><tr><td>S004</td><td>炊飯器</td><td>M003</td><td>32,000</td></tr><tr><td>S005</td><td>コーヒーメーカー</td><td>M004</td><td>15,000</td></tr><tr><td>S006</td><td>ホットプレート</td><td>M004</td><td>12,000</td></tr></tbody></table>\n\n〔SQL 文〕\nSELECT * FROM 商品 WHERE 仕入先 ID IN ('M002', 'M004')",
       "choices": [
         {
           "text": "ア: SELECT * FROM 商品 WHERE 仕入先 ID = 'M002' AND 仕入先 ID = 'M004'",
@@ -118,7 +118,7 @@
     },
     {
       "id": 7,
-      "body": "1G バイトの動画データを 40M ビット／秒の回線を使用してダウンロードしたところ，5 分掛かった。このときの回線利用率はおよそ何％か。",
+      "body": "1G バイトの動画データを 40M ビット／秒の回線を使用してダウンロードしたところ，5 分掛かった。このときの回線利用率はおよそ何％か。\nここで，ダウンロード時には動画データに 20％の制御情報が付加されるものとする。",
       "choices": [
         {
           "text": "ア: 10",
@@ -130,14 +130,14 @@
         },
         {
           "text": "ウ: 67",
-          "explanation": "正解。1Gバイトの動画データは8,000Mビットに相当します。40Mビット/秒の回線で5分（300秒）間ダウンロードした場合、理論最大転送量は12,000Mビットです。したがって、回線利用率は8,000Mビットを12,000Mビットで割った値に100を掛けた67%となります。"
+          "explanation": "不正解。計算が誤っています。"
         },
         {
           "text": "エ: 80",
-          "explanation": "不正解。計算が誤っています。"
+          "explanation": "正解。1Gバイト（8,000Mビット）の動画データに加え、その20%（1,600Mビット）の制御情報も送られたため、実際に転送されたデータ総量は 8,000+1,600=9,600Mビットです。40Mビット/秒の回線で5分（300秒）間の最大転送量は、40×300=12,000Mビットです。実際に転送された量（9,600Mビット）を最大転送量（12,000Mビット）で割ると、0.8 となります。これをパーセンテージにすると、0.8×100=80% です。"
         }
       ],
-      "correctChoiceIndex": 2
+      "correctChoiceIndex": 3
     },
     {
       "id": 8,
@@ -172,18 +172,18 @@
         },
         {
           "text": "イ: ある暗号アルゴリズムの秘密鍵が不正アクセスによって漏えいした。",
-          "explanation": "正解。秘密鍵の漏えいは暗号の危殆化に該当します。"
+          "explanation": "正解。これは暗号アルゴリズム自体の問題ではなく、運用上のセキュリティ管理の不備による情報漏えいです。"
         },
         {
           "text": "ウ: あるハッシュ関数においてハッシュ値が同じになるデータの組みを現実的な時間内で発見する方法が見つかった。",
-          "explanation": "不正解。これはハッシュ関数の衝突耐性の問題です。"
+          "explanation": "正解。「ハッシュ値が同じになる異なるデータの組み合わせ」を現実的な時間で見つけられる方法が見つかってしまうと、攻撃者はこの特性を悪用して、正当なデータと同じハッシュ値を持つ別のデータ（例えば悪意のあるデータ）を作成し、あたかも正当なデータであるかのように見せかけることが可能になってしまいます。これは、ハッシュ関数の根幹をなすセキュリティ特性が失われたことを意味します。つまり「危殆化した」状態になります。"
         },
         {
           "text": "エ: あるランサムウェアの一種で暗号化されたファイルの復号鍵が公開された。",
-          "explanation": "不正解。これはランサムウェアの問題です。"
+          "explanation": "不正解。これはランサムウェアの攻撃者が何らかの理由で復号鍵を公開したという状況であり、暗号技術が破られたわけではありません。"
         }
       ],
-      "correctChoiceIndex": 1
+      "correctChoiceIndex": 2
     },
     {
       "id": 10,
@@ -371,7 +371,7 @@
     },
     {
       "id": 19,
-      "body": "表の条件で喫茶店を開業したい。月 10 万円の利益を出すためには，1 客席当たり 1 日平均何人の客が必要か。\n\n| 客 1 人当たりの売上高  | 500 円 |\n| 客 1 人当たりの変動費  | 100 円 |\n| 固定費  | 300,000 円／月 |\n| 1 か月の営業日数  | 20 日 |\n| 客席数  | 10 席 |",
+      "body": "表の条件で喫茶店を開業したい。月 10 万円の利益を出すためには，1 客席当たり 1 日平均何人の客が必要か。<style>table{width:100%;max-width:100%;border-collapse:collapse;margin:20px 0;font-family:sans-serif;box-sizing:border-box;background-color:white;}th,td{border:1px solid #ddd;padding:8px;text-align:center;}th{background-color:transparent;text-align:center;}</style><table><thead><tr><th>客 1 人当たりの売上高</th><th>500 円</th></tr></thead><tbody><tr><td>客 1 人当たりの変動費</td><td>100 円</td></tr><tr><td>固定費</td><td>300,000 円／月</td></tr><tr><td>1 か月の営業日数</td><td>20 日</td></tr><tr><td>客席数</td><td>10 席</td></tr></tbody></table>",
       "choices": [
         {
           "text": "ア: 3.75",
@@ -420,7 +420,7 @@
   [
     {
              "id": 1,
-             "body": "次のプログラム中の（　　a　　）と（　　b　　）に入れる正しい答えの組合せを解答群の中から選べ。\n関数 function1 が受け取る引数と，関数 function2 が受け取る引数とが同じとき， 二つの関数は同じ値を返す。ここで，引数 n と引数 m は正の整数であり，引数 m は引数 n よりも 10 以上大きい数とする。\n\n〔プログラム〕 \n○整数型: function1(整数型: n, 整数型: m) \n 整数型: count ← 0 \n 整数型: i \n for (iをnからmまで1ずつ増やす) \n if ((i mod 4)が0と等しい) \n count ← count ＋ 1 \n endif \nendfor \nreturn count \n\n○整数型: function2(整数型: n, 整数型: m) \n 整数型: count ← 0 \n 整数型: tempN ← n \n 整数型: i, j \n for (　　a　　)   \na \n if ((tempN mod 4)が0と等しい) \n 繰返し処理を終了する \n endif \n tempN ← tempN ＋ 1 \n endfor \nfor (　　b　　)  \nb \n count ← count ＋ 1 \nendfor \nreturn count",
+             "body": "次のプログラム中の（　　a　　）と（　　b　　）に入れる正しい答えの組合せを解答群の中から選べ。\n関数 function1 が受け取る引数と，関数 function2 が受け取る引数とが同じとき， 二つの関数は同じ値を返す。ここで，引数 n と引数 m は正の整数であり，引数 m は引数 n よりも 10 以上大きい数とする。\n\n〔プログラム〕 \n○整数型: function1(整数型: n, 整数型: m) \n　整数型: count ← 0 \n　整数型: i \n　for (iをnからmまで1ずつ増やす) \n　　if ((i mod 4)が0と等しい) \n　　　count ← count ＋ 1 \n　　endif \n　endfor \n　return count \n\n○整数型: function2(整数型: n, 整数型: m) \n　整数型: count ← 0 \n　整数型: tempN ← n \n　整数型: i, j \n　for (　　a　　)   \n　　if ((tempN mod 4)が0と等しい) \n　　　繰返し処理を終了する \n　　endif \n　　tempN ← tempN ＋ 1 \n　endfor \n\n　for (　　b　　)  \n　　count ← count ＋ 1 \n　endfor \n　return count",
              "choices": [
                {
                  "text": "ア: a: iを1から2まで1ずつ増やす , b: jをnから始めてmを超えない範囲でtempNずつ増やす",
@@ -451,7 +451,7 @@
            },
            {
              "id": 2,
-             "body": "次のプログラム中の(　　　　)に入れる正しい答えを，解答群の中から選べ。\n関数 change は，10 より大きい整数を引数 n で受け取り，1 円玉，5 円玉，10 円玉 を使ってちょうど n 円にする組合せの総数を返す。 \n例えば，12 円にする組合せは，次のように数えられる。10 円玉を使わない場合に は，1 円玉と 5 円玉だけでちょうど 12 円にすることになる。その組合せは，使える 5 円玉の枚数が 0 以上 (12 ÷ 5 の商) 以下なので，(12 ÷ 5 の商) ＋ 1 ＝ 3 通りあ る。同様に，10 円玉を 1 枚使う場合には，1 円玉と 5 円玉だけでちょうど 2 円にする ことになり，その組合せは (2 ÷ 5 の商) ＋ 1 ＝ 1 通りある。10 円玉を 2 枚以上 使う組合せはない。よって，1 円玉，5 円玉，10 円玉を使ってちょうど 12 円にする 組合せは，3 ＋ 1 ＝ 4 通りである。 \n\n〔プログラム〕 \n○整数型: change(整数型: n) \n 整数型: count ← 0 \n 整数型: rest ← n \n while (　　　　) \n  count ← count ＋ (rest ÷ 5 の商) ＋ 1 \n  rest ← rest － 10 \n endwhile \n return count",
+             "body": "次のプログラム中の(　　　　)に入れる正しい答えを，解答群の中から選べ。\n関数 change は，10 より大きい整数を引数 n で受け取り，1 円玉，5 円玉，10 円玉 を使ってちょうど n 円にする組合せの総数を返す。 \n例えば，12 円にする組合せは，次のように数えられる。10 円玉を使わない場合に は，1 円玉と 5 円玉だけでちょうど 12 円にすることになる。\nその組合せは，使える 5 円玉の枚数が 0 以上 (12 ÷ 5 の商) 以下なので，(12 ÷ 5 の商) ＋ 1 ＝ 3 通りある。\n同様に，10 円玉を 1 枚使う場合には，1 円玉と 5 円玉だけでちょうど 2 円にする ことになり，その組合せは (2 ÷ 5 の商) ＋ 1 ＝ 1 通りある。\n10 円玉を 2 枚以上 使う組合せはない。\nよって，1 円玉，5 円玉，10 円玉を使ってちょうど 12 円にする 組合せは，3 ＋ 1 ＝ 4 通りである。 \n\n〔プログラム〕 \n○整数型: change(整数型: n) \n　整数型: count ← 0 \n　整数型: rest ← n \n　while (　　　　) \n　　count ← count ＋ (rest ÷ 5 の商) ＋ 1 \n　　rest ← rest － 10 \n　endwhile \n　return count",
              "choices": [
                {
                  "text": "ア: rest ≧ 0",
@@ -482,7 +482,7 @@
            },
            {
              "id": 3,
-             "body": "次のプログラム中の(　　a　　)と(　　b　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 push は，引数で与えられた整数をスタックに格納する。格納できた場合は true を返し，格納できなかった場合は false を返す。 \n関数 pop は，スタックから値を取り出して返す。スタックが空のときは未定義の値 を返す。 \nスタックを，要素数が 4 である大域の整数型の配列 stack，及び次に値を格納する 位置を示す大域の変数 stackPos で表現する。スタックの初期状態を図に示す。 プログラムでは，配列の領域外を参照してはならないものとする。\n\n| 要素番号  | 1  | 2  | 3  | 4 |\n| 　stack 　| 4  | 3  |    |   |\n  　      　            ↑      \n       　　　　　　  stackPos    \n 注記 網掛けはその要素が未定義であることを示す。 \n 図 スタックの初期状態 \n\n〔プログラム〕 \n大域: 整数型: stackPos ← 3 \n大域: 整数型の配列: stack ← {4, 3, 未定義の値, 未定義の値} \n\n○論理型: push(整数型: inputData) \n if (stackPos ≦ stackの要素数) \n stack[(　　a　　)] ← inputData   \n stackPos ← stackPos ＋ 1 \n return true \nelse \n return false \n endif \n\n○整数型: pop() \n 整数型: popData ← 未定義の値 \n if (stackPos ＞ 1) \n stackPos ←（　　b　　） \n popData ← stack[stackPos]  \n stack[stackPos] ← 未定義の値 \nendif \n return popData",
+             "body": "次のプログラム中の(　　a　　)と(　　b　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 push は，引数で与えられた整数をスタックに格納する。格納できた場合は true を返し，格納できなかった場合は false を返す。 \n関数 pop は，スタックから値を取り出して返す。スタックが空のときは未定義の値 を返す。 \nスタックを，要素数が 4 である大域の整数型の配列 stack，及び次に値を格納する 位置を示す大域の変数 stackPos で表現する。スタックの初期状態を図に示す。 \nプログラムでは，配列の領域外を参照してはならないものとする。<style>table{width:60%;border-collapse:collapse;margin:20px auto;font-family:monospace;border:1px solid black;}th,td{border:1px solid black;padding:8px;text-align:center;}th{background-color:white;}.data-cell{border:1px solid black;background-color:white;}.gray-cell{background-color:#f0f0f0;}.stack-label{text-align:center;margin-top:5px;}.arrow{display:block;text-align:center;margin-top:5px;}</style><table><thead><tr><th>要素番号</th><th class=\"data-cell\">1</th><th class=\"data-cell\">2</th><th class=\"data-cell\">3</th><th class=\"data-cell\">4</th></tr></thead><tbody><tr><td style=\"background-color:white;\">stack</td><td class=\"data-cell\">4</td><td class=\"data-cell\">3</td><td class=\"gray-cell\"></td><td class=\"gray-cell\"></td></tr></tbody></table><div class=\"stack-label\"><span class=\"arrow\">　　　　　　　　　↑</span><span>　　　　　　　　　stackPos</span></div><div style=\"text-align:center;margin-top:10px;font-size:0.9em;\">注記 網掛けはその要素が未定義であることを示す。<br>図 スタックの初期状態</div> \n\n〔プログラム〕 \n大域: 整数型: stackPos ← 3 \n大域: 整数型の配列: stack ← {4, 3, 未定義の値, 未定義の値} \n\n○論理型: push(整数型: inputData) \n　if (stackPos ≦ stackの要素数) \n　　stack[(　　a　　)] ← inputData   \n　　stackPos ← stackPos ＋ 1 \n　　return true \n　else \n　　return false \n　endif \n\n○整数型: pop() \n　整数型: popData ← 未定義の値 \n　if (stackPos ＞ 1) \n　　stackPos ←（　　b　　） \n　　popData ← stack[stackPos]  \n　　stack[stackPos] ← 未定義の値 \n　endif \n　return popData",
              "choices": [
                {
                  "text": "ア: a: stackPos, b: stackPos ＋ 1",
@@ -505,7 +505,7 @@
            },
            {
              "id": 4,
-             "body": "次の記述中の(　　　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 search は，二つの文字型の配列を，それぞれ引数 data 及び key で受け取り， data から，key の要素の並びと同じ並びを全て探し，その先頭の要素番号を全て格納 した配列を返す。見つからなければ，要素数 0 の配列を返す。 \n関数 search を search({\"a\", \"b\", \"a\", \"b\", \"c\", \"a\", \"b\", \"c\"}, {\"a\", \"b\",  \"c\"}) として呼び出すと，/*** β ***/の行の条件式が真となる回数は(　　　　)回である。\n\n〔プログラム〕 \n/* keyは，要素数1以上の配列である */ \n○整数型の配列: search(文字型の配列: data, 文字型の配列: key)  整数型: i, j, lenData, lenKey \n 整数型の配列: result ← {} // 要素数0の配列 \n lenData ← dataの要素数 \n lenKey ← keyの要素数 \n\n /* (lenData － lenKey ＋ 1) が0以下のときは繰返し処理を実行しない */  for (i を 1 から (lenData － lenKey ＋ 1) まで 1 ずつ増やす)  for (j を 1 から lenKey まで 1 ずつ増やす) // α \n if (data[i ＋ j － 1] が key[j] と等しい) /*** β ***/  if (j が lenKey と等しい) \n resultの末尾 に iの値 を追加する \n endif \n else \n αの行から始まる繰返し処理を終了する \n endif \n endfor \n endfor \n return result",
+             "body": "次の記述中の(　　　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 search は，二つの文字型の配列を，それぞれ引数 data 及び key で受け取り， data から，key の要素の並びと同じ並びを全て探し，その先頭の要素番号を全て格納 した配列を返す。見つからなければ，要素数 0 の配列を返す。 \n関数 search を search({\"a\", \"b\", \"a\", \"b\", \"c\", \"a\", \"b\", \"c\"}, {\"a\", \"b\",  \"c\"}) として呼び出すと，/*** β ***/の行の条件式が真となる回数は(　　　　)回である。\n\n〔プログラム〕 \n/* keyは，要素数1以上の配列である */ \n○整数型の配列: search(文字型の配列: data, 文字型の配列: key) \n　整数型: i, j, lenData, lenKey \n　整数型の配列: result ← {} // 要素数0の配列 \n\n　lenData ← dataの要素数 \n　lenKey ← keyの要素数 \n\n　 /* (lenData － lenKey ＋ 1) が0以下のときは繰返し処理を実行しない */ \n　for (i を 1 から (lenData － lenKey ＋ 1) まで 1 ずつ増やす)  \n　　for (j を 1 から lenKey まで 1 ずつ増やす) // α \n　　　if (data[i ＋ j － 1] が key[j] と等しい) /*** β ***/ \n　　　　if (j が lenKey と等しい) \n　　　　　resultの末尾 に iの値 を追加する \n　　　　endif \n　　　else \n　　　　αの行から始まる繰返し処理を終了する \n　　　endif \n　　endfor \n　endfor \n　return result",
              "choices": [
                {
                  "text": "ア: 1",
@@ -552,7 +552,7 @@
            },
            {
              "id": 5,
-             "body": "次のプログラム中の(　　a　　)と(　　b　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n予防接種の病気 X に対する予防効果を調査するために集めたデータの集計結果を基 に，病気 X にかかるかどうかが，予防接種の有無に影響されないと仮定した場合の人数を計算する。この人数を理論度数という。表 1 に集計結果の例を示し，表 2 に表 1 を基に計算した理論度数を示す。\n関数 f は，引数 data で受け取った集計結果を基に計算した理論度数を返す。引数と戻り値は二次元配列で，その行が表の行,その列が表の列に対応する。\n\n表 1 集計結果の例\n　　　　　　　　　　　　　　　　　　　　　　　　　　　　　単位  人\n 　　　　　　　　       |病気 X にかからなかった|病気 X にかかった|\n| 予防接種を受けた      |                    82 |               6 |\n| 予防接種を受けていない|                    58 |               8 |\n\n\n表 2 表 1 を基に計算した理論度数\n　　　　　　　　　　　　　　　　　　　　　　　　　　　　　単位 人\n 　　　　　　　　       |病気 X にかからなかった|病気 X にかかった|\n| 予防接種を受けた      |           a           |                 |\n| 予防接種を受けていない|                       |        b        |\n注記 網掛けの部分は表示していない。\n\n〔プログラム〕 \n○実数型の二次元配列: f(実数型の二次元配列: data) \n 実数型: t ← dataの要素の和 \n 整数型: row ← dataの行数 \n 整数型: col ← dataの列数 \n 実数型の二次元配列: result ← {row行col列の 未定義の値}  \n 整数型: r, c \n for (r を 1 から row まで 1 ずつ増やす) \n for (c を 1 から col まで 1 ずつ増やす) \n result[r, c] ← (dataの行番号rの要素の和) ×  \n　　　　　　　　 (dataの列番号cの要素の和) ÷ t  \n   endfor \n endfor \n return result",
+             "body": "次のプログラム中の(　　a　　)と(　　b　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n予防接種の病気 X に対する予防効果を調査するために集めたデータの集計結果を基 に，病気 X にかかるかどうかが，予防接種の有無に影響されないと仮定した場合の人数を計算する。この人数を理論度数という。表 1 に集計結果の例を示し，表 2 に表 1 を基に計算した理論度数を示す。\n関数 f は，引数 data で受け取った集計結果を基に計算した理論度数を返す。引数と戻り値は二次元配列で，その行が表の行,その列が表の列に対応する。\n\n<p class=\"table-caption\">表 1 集計結果の例<br>単位  人</p>\n<div class=\"table-responsive\">\n    <table>\n        <thead>\n            <tr>\n                <th></th>\n                <th>病気 X にかからなかった</th>\n                <th>病気 X にかかった</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>予防接種を受けた</td>\n                <td class=\"align-right\">82</td>\n                <td class=\"align-right\">6</td>\n            </tr>\n            <tr>\n                <td>予防接種を受けていない</td>\n                <td class=\"align-right\">58</td>\n                <td class=\"align-right\">8</td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n\n\n<p class=\"table-caption\">表 2 表 1 を基に計算した理論度数<br>単位 人</p>\n<div class=\"table-responsive\">\n    <table>\n        <thead>\n            <tr>\n                <th></th>\n                <th>病気 X にかからなかった</th>\n                <th>病気 X にかかった</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>予防接種を受けた</td>\n                <td class=\"align-center\">a</td>\n                <td></td>\n            </tr>\n            <tr>\n                <td>予防接種を受けていない</td>\n                <td></td>\n                <td class=\"align-center\">b</td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n注記 網掛けの部分は表示していない。\n\n〔プログラム〕 \n○実数型の二次元配列: f(実数型の二次元配列: data) \n　実数型: t ← dataの要素の和 \n　整数型: row ← dataの行数 \n　整数型: col ← dataの列数 \n　実数型の二次元配列: result ← {row行col列の 未定義の値}  \n　整数型: r, c \n　for (r を 1 から row まで 1 ずつ増やす) \n　　for (c を 1 から col まで 1 ずつ増やす) \n　　　result[r, c] ← (dataの行番号rの要素の和) ×  \n　　　　　 　　　　　 (dataの列番号cの要素の和) ÷ t  \n　　endfor \n　endfor \n　return result",
              "choices": [
                {
                  "text": "ア: a: 44, b: 33",
@@ -587,7 +587,7 @@
            },
            {
              "id": 6,
-             "body": "A 社は従業員 200 名の電子機器メーカーである。東京に本社があり，新潟に工場がある。 \nA 社では，ファイルサーバを「　　」のように運用している。\n\n「・ファイルサーバは本社と工場のサーバルームに設置している。\n・ファイルサーバは，磁気テープを使用してファイルのバックアップを取得している。\n・土曜日の午前 2 時からフルバックアップを取得し，翌週の火曜日と木曜日の午前 2 時から増分バックアップを取得している。\n・情報システム部の担当者は毎週月曜日，火曜日，木曜日の朝 10 時頃，バックアップジョブの実行結果の確認と磁気テープの交換を行い，磁気テープは耐火金庫に保管している。\n・磁気テープには上書きモードでバックアップを取得し，1 か月分の磁気テープを世代管理している。\n・これまで，フルバックアップからのリストアには平均して 4 時間，1 回の増分バックアップからは平均して 0.25 時間掛かっている。\n・A 社は ICT 継続のための試験を実施しており，ファイルサーバも試験対象である。」\n注記 事業影響度分析の結果に基づき，ファイルサーバは，72 時間の目標復旧時点（RPO）と120 時間の目標復旧時間(RTO)が要求事項として定められている。\n\nA 社は ISMS 認証を取得しており，最高情報セキュリティ責任者（CISO）を中心に 情報セキュリティに取り組み，定期的に，情報セキュリティリスクアセスメントを行っている。今般，ISMS 認証基準が JIS Q 27001:2023 に改正されたことを受け，情報セキュリティリーダーの B さんは，新基準への移行審査に向けて準備することになった。改正によって新たに追加された情報セキュリティ管理策について，B さんは情報 システム部の担当者に取組状況を確認し，その評価結果を表 1 にまとめた。\n\n　　　　　　　　　表 1 B さんの評価結果（抜粋） \n| 項番  | 　　　　情報セキュリティ管理策　　　  |　 　評価結果　　|\n|　 1   |(事業継続のための ICT の備え）事業継続 |　 実施している  |\n|　     |の目的及び ICT 継続の 要求事項に基づい |　 　　　　　　  |\n|　     |いて，ICT の備えを計画し,実施し,維持し,|　 　　　　　　  |\n|　     |試験しなければならない。　　　　　　　 |　 　　　　　　  |\n\nB さんは，移行審査前の内部監査で，内部監査室から表 1 の項番 1 に関するファイルサーバの運用について何点か質問を受け，表 2 のとおり回答した。\n\n　　　　　　　表 2 内部監査室への B さんの回答（抜粋） \n| 項番  |　　　　　　 　　　　 B さんの回答　　　  　　　　　　　 |\n|   1   | 例えば，金曜日の正午に障害が発生した場合，少なくとも(a1)|\n|       | の時点のデータは復元しなければならない。 　　　　　 　  |\n|   2   | 例えば，木曜日の正午に障害が発生し，ファイルサーバの全デ|\n|       | ータが消失したとすると，バックアップからのリストアには  |\n|       |(a2)時間掛かると予想される。 　　　　　　　　　　　　　　|\n|   3   | ICT 継続の計画書は，(a3)が承認している。　　　　　　 　 |\n\n設問 表 2 中の(a1)～(a3)に入れる字句の適切な組合せを，a に関する解答群の中から選べ。",
+             "body": "A 社は従業員 200 名の電子機器メーカーである。東京に本社があり，新潟に工場がある。 \nA 社では，ファイルサーバを図 1のように運用している。\n\n<p style=\"border: 1px solid black; padding: 10px; white-space: normal;background-color:white;\">・ファイルサーバは本社と工場のサーバルームに設置している。<br>・ファイルサーバは，磁気テープを使用してファイルのバックアップを取得している。<br>・土曜日の午前 2 時からフルバックアップを取得し，翌週の火曜日と木曜日の午前 2 時から増分バックアップを取得している。<br>・情報システム部の担当者は毎週月曜日，火曜日，木曜日 の朝 10 時頃，バックアップジョブの実行結果の確認と磁気テープの交換を行い，磁気テープは耐火金庫に保管している。<br>・磁気テープには上書きモードでバックアップを取得し，1 か月分の磁気テープを世代管理している。<br>・これまで，フルバックアップからのリストアには平均して 4 時間，1 回の増分バックアップからは平均して 0.25 時間掛かっている。<br>・A 社は ICT 継続のための試験を実施しており，ファイルサーバも試験対象である。</p>注記 事業影響度分析の結果に基づき，ファイルサーバは，72 時間の目標復旧時点（RPO）と120 時間の目標復旧時間(RTO)が要求事項として定められている。<p style=\"text-align: center;\">図 1 A 社のファイルサーバの運用</p>\n\nA 社は ISMS 認証を取得しており，最高情報セキュリティ責任者（CISO）を中心に 情報セキュリティに取り組み，定期的に，情報セキュリティリスクアセスメントを行っている。今般，ISMS 認証基準が JIS Q 27001:2023 に改正されたことを受け，情報セキュリティリーダーの B さんは，新基準への移行審査に向けて準備することになった。改正によって新たに追加された情報セキュリティ管理策について，B さんは情報 システム部の担当者に取組状況を確認し，その評価結果を表 1 にまとめた。\n\n<!DOCTYPE html><html lang=\"ja\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>情報セキュリティ管理策と回答</title><style>table{width:100%;border-collapse:collapse;margin:20px auto;font-family:sans-serif;background-color:white;}th,td{border:1px solid black;padding:8px;vertical-align:top;text-align:left;}th{background-color:white;text-align:center;}.table-title{text-align:center;font-weight:bold;margin-bottom:10px;}.align-center{text-align:center;}.align-left{text-align:left;}</style></head><body><p class=\"table-title\">表 1 B さんの評価結果（抜粋）</p><table><thead><tr><th class=\"align-center\"style=\"width: 20%;\">項番</th><th class=\"align-center\"style=\"width: 60%;\">情報セキュリティ管理策</th><th class=\"align-center\"style=\"width: 20%;\">評価結果</th></tr></thead><tbody><tr><td class=\"align-center\">1</td><td>（事業継続のための ICT の備え）事業継続の目的及び ICT 継続の 要求事項に基づいて，ICT の備えを計画し,実施し,維持し,試験しなければならない。</td><td class=\"align-center\">実施している</td></tr></tbody></table></body></html>B さんは，移行審査前の内部監査で，内部監査室から表 1 の項番 1 に関するファイルサーバの運用について何点か質問を受け，表 2 のとおり回答した。\n\n<p class=\"table-title\">表 2 内部監査室への B さんの回答（抜粋）</p><table><thead><tr><th class=\"align-center\" style=\"width: 20%;\">項番</th><th class=\"align-center\" style=\"width: 80%;\">B さんの回答</th></tr></thead><tbody><tr><td class=\"align-center\">1</td><td>例えば，金曜日の正午に障害が発生した場合，少なくとも<br>(　a1　)の時点のデータは復元しなければならない。</td></tr><tr><td class=\"align-center\">2</td><td>例えば，木曜日の正午に障害が発生し，ファイルサーバの全データが消失したとすると，バックアップからのリストアには<br>(　a2　)時間掛かると予想される。</td></tr><tr><td class=\"align-center\">3</td><td>ICT 継続の計画書は，(　a3　)が承認している。</td></tr></tbody></table><style>table{width:80%;border-collapse:collapse;margin:20px auto;font-family:sans-serif;background-color:white;}th,td{border:1px solid black;padding:8px;vertical-align:top;text-align:left;}th{background-color:white;text-align:center;}.table-title{text-align:center;font-weight:bold;margin-bottom:10px;}.align-center{text-align:center;}.align-left{text-align:left;}</style>\n\n設問 表 2 中の(　a1　)～(　a3　)に入れる字句の適切な組合せを，a に関する解答群の中から選べ。",
              "choices": [
                {
                  "text": "ア: a1: 月曜日の正午, a2: 4.25, a3: CISO",
@@ -986,19 +986,19 @@
       "body": "日本において、産業財産権と総称される四つの権利はどれか。",
       "choices": [
         {
-          "text": "ア: 意匠権、実用新案権 商標権,特許権",
+          "text": "ア: 意匠権、実用新案権、商標権、特許権",
           "explanation": "正解。産業の発展を目的とする「産業財産権」は、発明を保護する「特許権」、考案を保護する「実用新案権」、デザインを保護する「意匠権」、マークを保護する「商標権」の4つの権利から構成されます。"
         },
         {
-          "text": "イ: 意匠権、実用新案権,著作権,特許権",
+          "text": "イ: 意匠権、実用新案権、著作権、特許権",
           "explanation": "不正解。「著作権」は文化の発展を目的とする権利であり、産業財産権には含まれません。"
         },
         {
-          "text": "ウ: 意匠権 商標権,著作権,特許権",
+          "text": "ウ: 意匠権、商標権、著作権、特許権",
           "explanation": "不正解。「著作権」は産業財産権には含まれません。"
         },
         {
-          "text": "エ: 実用新案権 商標権,著作権,特許権",
+          "text": "エ: 実用新案権、商標権、著作権、特許権",
           "explanation": "不正解。「著作権」は産業財産権には含まれません。"
         }
       ],
@@ -1009,7 +1009,7 @@
 [
     {
       "id": 1,
-      "body": "次のプログラム中の空欄に入れる正しい答えを、解答群から選べ。\n関数 maximum は、異なる三つの整数を引数で受け取り、そのうちの最大値を返す。\n\n【プログラム】\n○整数型: maximum(整数型: x, 整数型: y, 整数型: z)\n  if ( ______ )\n    return x\n  elseif (y > z)\n    return y\n  else\n    return z\n  endif",
+      "body": "次のプログラム中の(　　　)に入れる正しい答えを、解答群から選べ。\n関数 maximum は、異なる三つの整数を引数で受け取り、そのうちの最大値を返す。\n\n【プログラム】\n○整数型: maximum(整数型: x, 整数型: y, 整数型: z)\n  if ( 　　　 )\n    return x\n  elseif (y > z)\n    return y\n  else\n    return z\n  endif",
       "choices": [
         {
           "text": "ア: x > y",
@@ -1040,7 +1040,7 @@
     },
     {
       "id": 2,
-      "body": "次のプログラム中の空欄に入れる正しい答えを、解答群の中から選べ。\n関数 convDecimal は、引数として与えられた、\"0\"と\"1\"だけから成る、1文字以上の文字列を、符号なしの2進数と解釈したときの整数値を返す。例えば、引数として\"10010\"を与えると18が返る。\n関数 convDecimal が利用する関数 int は、引数で与えられた文字が\"0\"なら整数値0を返し、\"1\"なら整数値1を返す。\n\n【プログラム】\n○整数型: convDecimal(文字列型: binary)\n  整数型: i, length, result ← 0 \n  length ← binaryの文字数 \n  for (i を 1 から length まで 1 ずつ増やす)\n    result ← ＿＿＿ \n  endfor \n  return result",
+      "body": "次のプログラム中の(　　　)に入れる正しい答えを、解答群の中から選べ。\n関数 convDecimal は、引数として与えられた、\"0\"と\"1\"だけから成る、1文字以上の文字列を、符号なしの2進数と解釈したときの整数値を返す。例えば、引数として\"10010\"を与えると18が返る。\n関数 convDecimal が利用する関数 int は、引数で与えられた文字が\"0\"なら整数値0を返し、\"1\"なら整数値1を返す。\n\n【プログラム】\n○整数型: convDecimal(文字列型: binary)\n  整数型: i, length, result ← 0 \n  length ← binaryの文字数 \n  for (i を 1 から length まで 1 ずつ増やす)\n    result ← (　　　) \n  endfor \n  return result",
       "choices": [
         {
           "text": "ア: result ＋ int(binary の (length － i ＋ 1)文字目の文字)",
@@ -1063,7 +1063,7 @@
     },
     {
       "id": 4,
-      "body": "次の記述中の空欄に入れる正しい答えを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。\n関数 merge は、昇順に整列された整数型の配列 data1 及び data2 を受け取り、これらを併合してできる昇順に整列された整数型の配列を返す。\n関数 merge を merge({2, 3}, {1, 4}) として呼び出すと，/*** α ***/ の行は [ ＿＿＿ ] 。\n\n【プログラム】\n○整数型の配列: merge(整数型の配列: data1, 整数型の配列: data2)\n 整数型: n1 ← data1の要素数\n 整数型: n2 ← data2の要素数\n 整数型の配列: work ← {(n1 ＋ n2)個の 未定義の値}\n 整数型: i ← 1\n 整数型: j ← 1\n 整数型: k ← 1\n while ((i ≦ n1) and (j ≦ n2))\n if (data1[i] ≦ data2[j])\n work[k] ← data1[i]\n i ← i ＋ 1\n else\n work[k] ← data2[j]\n j ← j ＋ 1\n endif\n k ← k ＋ 1\n endwhile\nwhile (i ≦ n1)\n work[k] ← data1[i]\n i ← i ＋ 1\n k ← k ＋ 1\n endwhile\n while (j ≦ n2)\n work[k] ← data2[j] /*** α ***/\n j ← j ＋ 1\n k ← k ＋ 1\n endwhile\n return work",
+      "body": "次の記述中の( 　　　 )に入れる正しい答えを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。\n関数 merge は、昇順に整列された整数型の配列 data1 及び data2 を受け取り、これらを併合してできる昇順に整列された整数型の配列を返す。\n関数 merge を merge({2, 3}, {1, 4}) として呼び出すと，/*** α ***/ の行は \n( 　　　 ) 。\n\n【プログラム】\n○整数型の配列: merge(整数型の配列: data1, 整数型の配列: data2)\n 整数型: n1 ← data1の要素数\n 整数型: n2 ← data2の要素数\n 整数型の配列: work ← {(n1 ＋ n2)個の 未定義の値}\n 整数型: i ← 1\n 整数型: j ← 1\n 整数型: k ← 1\n\n while ((i ≦ n1) and (j ≦ n2))\n   if (data1[i] ≦ data2[j])\n     work[k] ← data1[i]\n     i ← i ＋ 1\n   else\n     work[k] ← data2[j]\n     j ← j ＋ 1\n   endif\n   k ← k ＋ 1\n endwhile\n\n while (i ≦ n1)\n   work[k] ← data1[i]\n   i ← i ＋ 1\n   k ← k ＋ 1\n endwhile\n\n while (j ≦ n2)\n   work[k] ← data2[j] /*** α ***/\n   j ← j ＋ 1\n   k ← k ＋ 1\n endwhile\n\n return work",
       "choices": [
         {
           "text": "ア: 実行されない",
@@ -1086,7 +1086,7 @@
     },
     {
       "id": 5,
-      "body": "次のプログラム中のa～cに入れる正しい答えの組合せを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。\n一度の注文で購入された商品のリストを、注文ごとに記録した注文データがある。表に、注文データの例を示す。\n\n表 注文データの例\n\n| 注文番号 | 購入された商品のリスト |\n| ----: | :---- |\n| 1  | A, B, D |\n| 2  | A, D |\n| 3  | A |\n| 4  | A, B, E |\n| 5  | B |\n| 6  | C, E |\n\n注文データから，商品 x と商品 y とが同一の注文で購入されやすい傾向を示す関連度 Lxy を，次の式で計算する。\n\nLxy＝Mxy × 全注文数 / (Kx × Ky)\n\nここで，Mxy は商品 x と商品 y とが同一の注文で購入された注文数，Kx は商品 x が購入された注文数，Ky は商品 y が購入された注文数を表す。表の例では，MAB が 2，全注文数が 6，KA が 4，KB が 3 であるので，商品 A と商品 B の関連度 LAB は，(2 × 6) ／ (4 × 3) ＝ 1.0 である。\n\n手続 putRelatedItem は，大域変数 orders に格納された注文データを基に，引数で与えられた商品との関連度が最も大きい商品のうちの一つと，その関連度を出力する。プログラムでは，商品は文字列で表し，注文は購入された商品の配列，注文データは注文の配列で表している。注文データには 2 種類以上の商品が含まれるものとする。また，注文データにある商品以外の商品が，引数として与えられることはないものとする。\n\n【プログラム】\n\n// 注文データ（ここでは表の例を与えている）\n\n大域: 文字列型配列の配列: orders ← {\"A\", \"B\", \"D\"}, {\"A\", \"D\"}, {\"A\"}, {\"A\", \"B\", \"E\"}, {\"B\"}, {\"C\", \"E\"}}\n\n○putRelatedItem(文字列型: item)\n\n文字列型の配列: allItems ← ordersに含まれる文字列を重複なく辞書順に格納した配列\n\n// 表の例では {\"A\", \"B\", \"C\", \"D\", \"E\"}\n\n文字列型の配列: otherItems ← allItemsの複製から値がitemである要素を除いた配列\n\n整数型: i, itemCount ← 0\n\n整数型の配列: arrayK ← {otherItemsの要素数個の0}\n\n整数型の配列: arrayM ← {otherItemsの要素数個の0}\n\n実数型: valueL, maxL ← －∞\n\n文字列型の配列: order\n\n文字列型: relatedItem\n\nfor (orderにordersの要素を順に代入する)\n\nif (orderのいずれかの要素の値がitemの値と等しい)\n\nitemCountの値を1増やす\n\nendif\n\nfor (iを1からotherItemsの要素数まで1ずつ増やす)\n\nif (orderのいずれかの要素の値がotherItems[i]の値と等しい)\n\nif (orderのいずれかの要素の値がitemの値と等しい)\n\nの値を1増やす\n\na\n\nendif\n\nの値を1増やす\n\nb\n\nendif\n\nendfor\n\nendfor\n\nfor (iを1からotherItemsの要素数まで1ずつ増やす)\n\nvalueL ← (arrayM[i] × ) ÷ (itemCount × arrayK[i])\n\nc\n\n/* 実数として計算する */\n\nif (valueLがmaxLより大きい)\n\nmaxL ← valueL\n\nrelatedItem ← otherItems[i]\n\nendif\n\nendfor\n\nrelatedItemの値とmaxLの値をこの順にコンマ区切りで出力する",
+      "body": "次のプログラム中の(　a　)～(　c　)に入れる正しい答えの組合せを、解答群の中から選べ。ここで、配列の要素番号は1から始まる。\n一度の注文で購入された商品のリストを、注文ごとに記録した注文データがある。表に、注文データの例を示す。\n\n<p style=\"text-align: center;\">表 注文データの例</p><table style=\"width:60%;background-color:white;border-collapse:collapse; display: block; margin: 0 auto;\"><thead style=\"background-color:#f2f2f2;\"><tr><th style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">注文番号</th><th style=\"width:45%;padding:8px;border:1px solid #ddd;text-align:left;\">購入された商品のリスト</th></tr></thead><tbody><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">1</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">A, B, D</td></tr><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">2</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">A, D</td></tr><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">3</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">A</td></tr><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">4</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">A, B, E</td></tr><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">5</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">B</td></tr><tr><td style=\"width:15%;padding:8px;border:1px solid #ddd;text-align:center;\">6</td><td style=\"width:45%;padding:8px;border:1px solid #ddd;\">C, E</td></tr></tbody></table>\n\n注文データから，商品 x と商品 y とが同一の注文で購入されやすい傾向を示す関連度 Lxy を，次の式で計算する。\n\nLxy＝Mxy × 全注文数 / (Kx × Ky)\n\nここで，Mxy は商品 x と商品 y とが同一の注文で購入された注文数，Kx は商品 x が購入された注文数，Ky は商品 y が購入された注文数を表す。\n表の例では，MAB が 2，全注文数が 6，KA が 4，KB が 3 であるので，商品 A と商品 B の関連度 LAB は，(2 × 6) ／ (4 × 3) ＝ 1.0 である。\n\n手続 putRelatedItem は，大域変数 orders に格納された注文データを基に，引数で与えられた商品との関連度が最も大きい商品のうちの一つと，その関連度を出力する。\nプログラムでは，商品は文字列で表し，注文は購入された商品の配列，注文データは注文の配列で表している。注文データには 2 種類以上の商品が含まれるものとする。また，注文データにある商品以外の商品が，引数として与えられることはないものとする。\n\n【プログラム】\n// 注文データ（ここでは表の例を与えている）\n\n大域: 文字列型配列の配列: orders ← {\"A\", \"B\", \"D\"}, {\"A\", \"D\"}, {\"A\"}, \n　　　　　　　　　　　　　　　　　　{\"A\", \"B\", \"E\"}, {\"B\"}, {\"C\", \"E\"}}\n\n○putRelatedItem(文字列型: item)\n　文字列型の配列: allItems ← ordersに含まれる文字列を\n　　　　　　　　　　　　　　　重複なく辞書順に格納した配列\n　　　　　　　　　　　　　　　// 表の例では {\"A\", \"B\", \"C\", \"D\", \"E\"}\n\n　文字列型の配列: otherItems ← allItemsの複製から値がitemである\n　　　　　　　　　　　　　　　　要素を除いた配列\n　整数型: i, itemCount ← 0\n　整数型の配列: arrayK ← {otherItemsの要素数個の0}\n　整数型の配列: arrayM ← {otherItemsの要素数個の0}\n　実数型: valueL, maxL ← －∞\n　文字列型の配列: order\n　文字列型: relatedItem\n\n　for (orderにordersの要素を順に代入する)\n　　if (orderのいずれかの要素の値がitemの値と等しい)\n　　　itemCountの値を1増やす\n　　endif\n　　for (iを1からotherItemsの要素数まで1ずつ増やす)\n　　　if (orderのいずれかの要素の値がotherItems[i]の値と等しい)\n　　　　if (orderのいずれかの要素の値がitemの値と等しい)\n　　　　　(　a　)の値を1増やす\n　　　　endif\n　　　　(　b　)の値を1増やす\n　　　endif\n　　endfor\n　endfor\n　for (iを1からotherItemsの要素数まで1ずつ増やす)\n　　valueL ← (arrayM[i] × (　c　)) ÷ (itemCount × arrayK[i])\n　　　　　　　　　　　　　　　　　　　　　　/* 実数として計算する */\n\n　　if (valueLがmaxLより大きい)\n　　　maxL ← valueL\n　　　relatedItem ← otherItems[i]\n　　endif\n　endfor\n　relatedItemの値とmaxLの値をこの順にコンマ区切りで出力する",
       "choices": [
         {
           "text": "ア: a: arrayK[i], b: arrayM[i], c: allItemsの要素数",
@@ -1117,7 +1117,7 @@
     },
     {
       "id": 6,
-      "body": "A社は従業員450名の商社であり、昨年から働き方改革の一環として、在宅でのテレワークを推進している。A社のシステム環境を「」に示す。\n\n「・従業員には、一人に1台デスクトップPC（以下、社内PCという）を貸与している。\n・従業員が利用するシステムには、自社で開発しA社に設置している業務システムのほかに、次の二つのSaaS（以下、二つのSaaSをA社利用クラウドサービスという）がある。\n  1. メール機能、チャット機能及びクラウドストレージ機能をもつグループウェア（以下、A社利用グループウェアという）\n  2. オンライン会議サービス\n・テレワークでは、従業員の個人所有PC（以下、私有PCという）の業務利用（BYOD）を許可している。\n・テレワークでは、社内PC及び私有PCのそれぞれに専用のアプリケーションソフトウェア（以下、専用アプリという）を導入し、社内PCのデスクトップから私有PCに画面転送を行うリモートデスクトップ方式を採用している。\n・専用アプリには、リモートデスクトップからPCへのファイルのダウンロード及びファイル、文字列、画像などのコピー&ペーストを禁止する機能（以下、保存禁止機能という）があり、A社では私有PCに対して当該機能を有効にしている。\n・業務システムには、社内PCのデスクトップから利用者ID及びパスワードを入力してログインしている。\n・A社利用クラウドサービスへのログインは、A社利用クラウドサービス側の設定によってA社の社内ネットワークからだけ可能になるように制限している。ログインには利用者ID及びパスワードを用いている。」\n\nテレワークの定着が進むにつれて、社内PCからインターネットへの接続が極端に遅くなり、業務に支障をきたしているので改善できないかと、従業員から問合せがあった。\nA社の社内ネットワークとインターネットとの間の通信量を調査したところ、テレワーク導入前に比べ、業務時間帯で顕著に増加していることが判明した。\nそのため、情報システム部では、テレワークでA社利用クラウドサービスに接続する場合には、A社の社内ネットワークも社内PCも介さずに直接接続することを可能にするネットワークの設定変更を実施することにした。\n\n設定変更に当たり、情報セキュリティ上の問題がないかをA社の情報セキュリティリーダーであるBさんが検討したところ、幾つか問題があることが分かった。\nその一つは、A社利用クラウドサービスへの不正アクセスのリスクが増加することである。そこでBさんは、リスクを低減するために、情報システム部に対策を依頼することにした。\n\n【設問】次の対策のうち、情報システム部に依頼することにしたものはどれか。解答群のうち、最も適切なものを選べ。",
+      "body": "A社は従業員450名の商社であり、昨年から働き方改革の一環として、在宅でのテレワークを推進している。A社のシステム環境を図 1に示す。\n\n<div style=\"border: 1px solid black; padding: 15px; margin: 10px; border-radius: 5px;background-color:white;\">・従業員には、一人に1台デスクトップPC（以下、社内PCという）を貸与している。<br>・従業員が利用するシステムには、自社で開発しA社に設置している業務システムのほかに、次の二つのSaaS（以下、二つのSaaSをA社利用クラウドサービスという）がある。<br>　1. メール機能、チャット機能及びクラウドストレージ機能をもつグループウェア（以下、A社利用グループウェアという）<br>　2. オンライン会議サービス<br>・テレワークでは、従業員の個人所有PC（以下、私有PCという）の業務利用（BYOD）を許可している。<br>・テレワークでは、社内PC及び私有PCのそれぞれに専用のアプリケーションソフトウェア（以下、専用アプリという）を導入し、社内PCのデスクトップから私有PCに画面転送を行うリモートデスクトップ方式を採用している。<br>・専用アプリには、リモートデスクトップからPCへのファイルのダウンロード及びファイル、文字列、画像などのコピー&ペーストを禁止する機能（以下、保存禁止機能という）があり、A社では私有PCに対して当該機能を有効にしている。<br>・業務システムには、社内PCのデスクトップから利用者ID及びパスワードを入力してログインしている。<br>・A社利用クラウドサービスへのログインは、A社利用クラウドサービス側の設定によってA社の社内ネットワークからだけ可能になるように制限している。ログインには利用者ID及びパスワードを用いている。</div><p style=\"text-align: center;\">図 1 A 社のシステム環境（抜粋）</p>\n\nテレワークの定着が進むにつれて、社内PCからインターネットへの接続が極端に遅くなり、業務に支障をきたしているので改善できないかと、従業員から問合せがあった。\nA社の社内ネットワークとインターネットとの間の通信量を調査したところ、テレワーク導入前に比べ、業務時間帯で顕著に増加していることが判明した。\nそのため、情報システム部では、テレワークでA社利用クラウドサービスに接続する場合には、A社の社内ネットワークも社内PCも介さずに直接接続することを可能にするネットワークの設定変更を実施することにした。\n\n設定変更に当たり、情報セキュリティ上の問題がないかをA社の情報セキュリティリーダーであるBさんが検討したところ、幾つか問題があることが分かった。\nその一つは、A社利用クラウドサービスへの不正アクセスのリスクが増加することである。そこでBさんは、リスクを低減するために、情報システム部に対策を依頼することにした。\n\n【設問】次の対策のうち、情報システム部に依頼することにしたものはどれか。解答群のうち、最も適切なものを選べ。",
       "choices": [
         {
           "text": "ア: A社の社内ネットワークからA社利用クラウドサービスへの通信を監視する。",
@@ -1171,26 +1171,26 @@
   },
   {
     "id": 2,
-    "body": "双方向のポインタをもつリスト構造のデータを表に示す。この表において新たな社員 G を社員 A と社員 K の間に追加する。追加後の表のポインタ a ～ f の中で追加前と比べて値が変わるポインタだけを全て列記したものはどれか。\n\n| アドレス  | 社員名  | 次ポインタ  | 前ポインタ |\n| :---: | :---: | :---: | :---: |\n| 100  | 社員 A  | 300 |  0 |\n| 200  | 社員 T |  0  | 300 |\n| 300  | 社員 K  | 200  | 100 |\n\n追加後の表\n\n| アドレス  | 社員名  | 次ポインタ  | 前ポインタ |\n| :---: | :---: | :---: | :---: |\n| 100  | 社員 A  | a  | b |\n| 200  | 社員 T  | c  | d |\n| 300  | 社員 K  | e  | f |\n| 400  | 社員 G  | x  | y |",
+    "body": "双方向のポインタをもつリスト構造のデータを表に示す。この表において新たな社員 G を社員 A と社員 K の間に追加する。追加後の表のポインタ a ～ f の中で追加前と比べて値が変わるポインタだけを全て列記したものはどれか。\n\n<P>表</P><div style=\"display: flex; flex-direction: column; align-items: center;max-height: 60%;\"><p class=\"question-text\"><table><thead><tr><th>アドレス</th><th>社員名</th><th>次ポインタ</th><th>前ポインタ</th></tr></thead><tbody><tr><td>100</td><td>社員 A</td><td>300</td><td>0</td></tr><tr><td>200</td><td>社員 T</td><td>0</td><td>300</td></tr><tr><td>300</td><td>社員 K</td><td>200</td><td>100</td></tr></tbody></table></div>\n\n\n<P>追加後の表</P><div style=\"overflow-x: auto; max-width: 100%;\"><table><thead><tr><th>アドレス</th><th>社員名</th><th>次ポインタ</th><th>前ポインタ</th></tr></thead><tbody><tr><td>100</td><td>社員 A</td><td>a</td><td>b</td></tr><tr><td>200</td><td>社員 T</td><td>c</td><td>d</td></tr><tr><td>300</td><td>社員 K</td><td>e</td><td>f</td></tr><tr><td>400</td><td>社員 G</td><td>x</td><td>y</td></tr></tbody></tbody></table>",
     "choices": [
       {
         "text": "ア: a，b，e，f",
-        "explanation": "不正解。bのポインタは変わりません。"
+        "explanation": "不正解。b, eのポインタは変わりません。"
       },
       {
         "text": "イ: a，e，f",
-        "explanation": "正解。社員Gを追加することで、a, e, fのポインタが変わります。"
+        "explanation": "不正解。eのポインタは変わりません。"
       },
       {
         "text": "ウ: a，f",
-        "explanation": "不正解。eのポインタも変わります。"
+        "explanation": "正解。社員Gの追加後、社員Aのすぐ次に社員Gが来ます。そのため、社員Aの次ポインタ（a）は社員Gのアドレス（400）を指すように変更されます。社員Kのすぐ前に社員Gが来ます。そのため、社員Kの前ポインタ（f）は社員Gのアドレス（400）を指すように変更されます。"
       },
       {
         "text": "エ: b，e",
-        "explanation": "不正解。aのポインタも変わります。bのポインタは変わりません。"
+        "explanation": "不正解。b, eのポインタは変わりません。"
       }
     ],
-    "correctChoiceIndex": 1
+    "correctChoiceIndex": 2
   },
   {
     "id": 3,
@@ -1244,11 +1244,11 @@
     "choices": [
       {
         "text": "ア: CG 映像作成における最終段階として，物体のデータをディスプレイに描画できるように映像化する処理である。",
-        "explanation": "不正解。CG 映像作成の最終段階ではありません。"
+        "explanation": "不正解。クリッピングはCG 映像作成の最終段階ではありません。"
       },
       {
         "text": "イ: 画像表示領域にウィンドウを定義し，ウィンドウの外側を除去し，内側の見える部分だけを取り出す処理である。",
-        "explanation": "正解。クリッピングは、ウィンドウの外側を除去し、内側の見える部分だけを取り出す処理です。"
+        "explanation": "正解。クリッピングはウィンドウの外側を除去し、内側の見える部分だけを取り出す処理です。"
       },
       {
         "text": "ウ: スクリーンの画素数が有限であるために図形の境界近くに生じる，階段状のギザギザを目立たなくする処理である。",
@@ -1367,7 +1367,7 @@
       },
       {
         "text": "ウ: デイリースクラム",
-        "explanation": "正解。デイリースクラムは、毎日行われる短時間のミーティングで、進捗を確認し、計画を調整します。"
+        "explanation": "正解。デイリースクラムは毎日行われる短時間のミーティングで、進捗を確認し、計画を調整します。"
       },
       {
         "text": "エ: レトロスペクティブ",
@@ -1543,30 +1543,30 @@
 [
   {
     "id": 1,
-    "body": "次のプログラム中の「　a　」と「　b　」に入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 findPrimeNumbers は，引数で与えられた整数以下の，全ての素数だけを格納した配列を返す関数である。ここで，引数に与える整数は 2 以上である。\n\n【プログラム】\n○整数型の配列: findPrimeNumbers(整数型: maxNum)\n 整数型の配列: pnList ← {} // 要素数0の配列\n 整数型: i, j\n 論理型: divideFlag\n for (i を 2 から　 a 　 まで 1 ずつ増やす)\n divideFlag ← true\n\n 「iの正の平方根の整数部分が2未満のときは，繰返し処理を実行しない」\n for (j を 2 から iの正の平方根の整数部分 まで 1 ずつ増やす) // α  if ( 　b 　)\n divideFlag ← false\n αの行から始まる繰返し処理を終了する\n endif\n endfor\n if (divideFlag が true と等しい)\n pnListの末尾 に iの値 を追加する\n endif\n endfor\n return pnList",
+    "body": "次のプログラム中の(　a　)と(　b　)に入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n関数 findPrimeNumbers は，引数で与えられた整数以下の，全ての素数だけを格納した配列を返す関数である。ここで，引数に与える整数は 2 以上である。\n\n【プログラム】\n○整数型の配列: findPrimeNumbers(整数型: maxNum)\n 整数型の配列: pnList ← {} // 要素数0の配列\n 整数型: i, j\n 論理型: divideFlag\n for (i を 2 から　 a 　 まで 1 ずつ増やす)\n 　divideFlag ← true\n\n 　/*iの正の平方根の整数部分が2未満のときは，繰返し処理を実行しない */\n 　for (j を 2 から iの正の平方根の整数部分 まで 1 ずつ増やす) // α \n 　　if ( 　b 　)\n 　　　　divideFlag ← false\n 　　　　αの行から始まる繰返し処理を終了する\n 　　endif\n 　endfor\n 　if (divideFlag が true と等しい)\n 　　pnListの末尾 に iの値 を追加する\n 　endif\n endfor\n return pnList",
     "choices": [
       {
-        "text": "ア: a 「maxNum」 / b 「i ÷ j の余り が 0 と等しい」",
-        "explanation": "不正解。i ÷ j の余りが 0 であることは、i が j で割り切れることを意味しますが、設問の文脈では正しい答えではありません。"
+        "text": "ア: a 「maxNum」 , b 「i ÷ j の余り が 0 と等しい」",
+        "explanation": "正解。プログラムの目的が「maxNum以下の素数をすべて見つける」ことだから、i は2からmaxNumまでチェックする必要があります。ある数iが素数でないと判断されるのは、2からiの平方根までのいずれかの数jで割り切れる（余りが0になる）場合だからです。divideFlagがfalseになるのは、この「割り切れた」瞬間です。"
       },
       {
-        "text": "イ: a 「maxNum」 / b 「i ÷ j の商 が 1 と等しくない」",
-        "explanation": "不正解。i ÷ j の商が 1 と等しくないことは、i が j より大きいことを意味しますが、設問の文脈では正しい答えではありません。"
+        "text": "イ: a 「maxNum」 , b 「i ÷ j の商 が 1 と等しくない」",
+        "explanation": "不正解。「i ÷ j の商が 1 と等しくない」ことは、割り切れることと関係なく、素数判定の条件として不適切だからです。"
       },
       {
-        "text": "ウ: a 「maxNum ＋ 1」 / b 「i ÷ j の余り が 0 と等しい」",
-        "explanation": "不正解。maxNum + 1 は、maxNum よりも 1 大きい数を意味しますが、設問の文脈では正しい答えではありません。"
+        "text": "ウ: a 「maxNum ＋ 1」 , b 「i ÷ j の余り が 0 と等しい」",
+        "explanation": "不正解。「maxNum + 1」は問題の要件「maxNum以下の素数」という条件を越えてしまうので不正解です。"
       },
       {
-        "text": "エ: a 「maxNum ＋ 1」 / b 「i ÷ j の商 が 1 と等しくない」",
-        "explanation": "正解。maxNum + 1 は、maxNum よりも 1 大きい数を意味し、i ÷ j の商が 1 と等しくないことは、i が j より大きいことを意味します。設問の文脈では正しい答えです。"
+        "text": "エ: a 「maxNum ＋ 1」 , b 「i ÷ j の商 が 1 と等しくない」",
+        "explanation": "不正解。maxNum + 1 は、範囲外であり、「商が1と等しくない」は素数判定の条件として間違っているからです。"
       }
     ],
-    "correctChoiceIndex": 3
+    "correctChoiceIndex": 0
   },
   {
     "id": 2,
-    "body": "次の記述中の「　　　」に入れる正しい答えを，解答群の中から選べ。\n次のプログラムにおいて，手続 proc2 を呼び出すと，「　　　」の順に出力される。\n\n【プログラム】\n○ proc1()\n　\"A\" を出力する\n　proc3()\n\n○ proc2()\n　proc3()\n　\"B\" を出力する\n　proc1()\n\n○ proc3()\n　\"C\" を出力する",
+    "body": "次の記述中の(　　　)に入れる正しい答えを，解答群の中から選べ。\n\n次のプログラムにおいて，手続 proc2 を呼び出すと，(　　　)の順に出力される。\n\n【プログラム】\n○ proc1()\n　\"A\" を出力する\n　proc3()\n\n○ proc2()\n　proc3()\n　\"B\" を出力する\n　proc1()\n\n○ proc3()\n　\"C\" を出力する",
     "choices": [
       {
         "text": "ア: \"A\"，\"B\"， \"B\"，\"C\"",
@@ -1578,7 +1578,7 @@
       },
       {
         "text": "ウ: \"A\"，\"C\"，\"B\"，\"C\"",
-        "explanation": "正解。手続 proc2 の実行結果として正しい順序です。"
+        "explanation": "不正解。出力の順序が異なります。"
       },
       {
         "text": "エ: \"B\"，\"A\"，\"B\"，\"C\"",
@@ -1598,14 +1598,14 @@
       },
       {
         "text": "ク: \"C\"，\"B\"，\"A\"，\"C\"",
-        "explanation": "不正解。出力の順序が異なります。"
+        "explanation": "正解。proc2からproc3→\"C\"、次に\"B\"、そしてproc1から\"A\"、最後にproc3から\"C\"と、順に実行されるためです。"
       }
     ],
-    "correctChoiceIndex": 2
+    "correctChoiceIndex": 7
   },
   {
     "id": 3,
-    "body": "次の記述中の「　　　」に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n次の手続 sort は，大域の整数型の配列 data の，引数 first で与えられた要素番号から引数 last で与えられた要素番号までの要素を昇順に整列する。\nここで，first ＜ last とする。手続 sort を sort(1, 5) として呼び出すと，/*** α ***/ の行を最初に実行したときの出力は「　　　」となる。\n\n〔プログラム〕\n大域: 整数型の配列: data ← {2, 1, 3, 5, 4}\n○sort(整数型: first, 整数型: last)\n 整数型: pivot, i, j\n pivot ← data[(first ＋ last) ÷ 2 の商]\n i ← first\n j ← last\n while (true)\n while (data[i] ＜ pivot)\n i ← i ＋ 1\n endwhile\n while (pivot ＜ data[j])\n j ← j － 1\n endwhile\n if (i ≧ j)\n 繰返し処理を終了する\n endif\n data[i]とdata[j]の値を入れ替える\n i ← i ＋ 1\n j ← j － 1\n endwhile\ndataの全要素の値を要素番号の順に空白区切りで出力する /*** α ***/\n if (first ＜ i － 1)\n sort(first, i － 1)\n endif\n if (j ＋ 1 ＜ last)\n sort(j ＋ 1, last)\n endif",
+    "body": "次の記述中の(　　　)に入れる正しい答えを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n\n次の手続 sort は，大域の整数型の配列 data の，引数 first で与えられた要素番号から引数 last で与えられた要素番号までの要素を昇順に整列する。\nここで，first ＜ last とする。手続 sort を sort(1, 5) として呼び出すと，/*** α ***/ の行を最初に実行したときの出力は(　　　)となる。\n\n〔プログラム〕\n大域: 整数型の配列: data ← {2, 1, 3, 5, 4}\n\n○sort(整数型: first, 整数型: last)\n　整数型: pivot, i, j\n　pivot ← data[(first ＋ last) ÷ 2 の商]\n　i ← first\n　j ← last\n\n　while (true)\n　　while (data[i] ＜ pivot)\n　　　i ← i ＋ 1\n　　endwhile\n　　while (pivot ＜ data[j])\n　　　j ← j － 1\n　　endwhile\n　　if (i ≧ j)\n　　　繰返し処理を終了する\n　　endif\n　　data[i]とdata[j]の値を入れ替える\n　　i ← i ＋ 1\n　　j ← j － 1\n　endwhile\n　dataの全要素の値を要素番号の順に空白区切りで出力する /*** α ***/\n　if (first ＜ i － 1)\n　　sort(first, i － 1)\n　endif\n　if (j ＋ 1 ＜ last)\n　　sort(j ＋ 1, last)\n　endif",
     "choices": [
       {
         "text": "ア: 1 2 3 4 5",
@@ -1617,18 +1617,18 @@
       },
       {
         "text": "ウ: 2 1 3 4 5",
-        "explanation": "正解。手続 sort の実行結果として正しい順序です。"
+        "explanation": "不正解。出力の順序が異なります。"
       },
       {
         "text": "エ: 2 1 3 5 4",
-        "explanation": "不正解。出力の順序が異なります。"
+        "explanation": "正解。sort(1, 5) の最初の呼び出しでは、ピボットが data[3] の 3 に設定されます。ループ内で要素を探索しますが、data = {2, 1, 3, 5, 4} の初期状態では、ピボット 3 を基準にして左に 2 と 1、右に 5 と 4 があり、既に適切な位置にあるため、要素の入れ替えは行われません。i と j は最終的に 3 で交差し、ループが終了します。したがって、/*** α ***/ の行が最初に実行されるとき、data 配列は初期状態のまま {2, 1, 3, 5, 4} であり、この値が出力されます。"
       }
     ],
-    "correctChoiceIndex": 2
+    "correctChoiceIndex": 3
   },
   {
     "id": 4,
-    "body": "次の記述中の「　　　」に入れる正しい答えを，解答群の中から選べ。\nここで，配列の要素番号は 1 から始まる。\n関数 add は，引数で指定された正の整数 value を大域の整数型の配列 hashArray に格納する。\n格納できた場合は true を返し，格納できなかった場合は false を返す。\nここで，整数 value を hashArray のどの要素に格納すべきかを，関数 calcHash1 及び calcHash2 を利用して決める。手続 test は，関数 add を呼び出して，hashArray に正の整数を格納する。手続test の処理が終了した直後の hashArray の内容は，「　　　」である。\n\n〔プログラム〕\n大域: 整数型の配列: hashArray\n○論理型: add(整数型: value)\n 整数型: i ← calcHash1(value)\n if (hashArray[i] ＝ －1)\n hashArray[i] ← value\n return true\n else\n i ← calcHash2(value)\n if (hashArray[i] ＝ －1)\n hashArray[i] ← value\n return true\n endif\n endif\n return false\n○整数型: calcHash1(整数型: value)\n return (value mod hashArrayの要素数) ＋ 1\n○整数型: calcHash2(整数型: value)\n return ((value ＋ 3) mod hashArrayの要素数) ＋ 1\n○test()\n hashArray ← {5個の －1}\n add(3)\n add(18)\n add(11)\n",
+    "body": "次の記述中の(　　　)に入れる正しい答えを，解答群の中から選べ。\nここで，配列の要素番号は 1 から始まる。\n\n関数 add は，引数で指定された正の整数 value を大域の整数型の配列 hashArray に格納する。\n格納できた場合は true を返し，格納できなかった場合は false を返す。\nここで，整数 value を hashArray のどの要素に格納すべきかを，関数 calcHash1 及び calcHash2 を利用して決める。\n手続 test は，関数 add を呼び出して，hashArray に正の整数を格納する。手続test の処理が終了した直後の hashArray の内容は，(　　　)である。\n\n〔プログラム〕\n大域: 整数型の配列: hashArray\n\n○論理型: add(整数型: value)\n　整数型: i ← calcHash1(value)\n　if (hashArray[i] ＝ －1)\n　　hashArray[i] ← value\n　　return true\n　else\n　　i ← calcHash2(value)\n　　if (hashArray[i] ＝ －1)\n　　　hashArray[i] ← value\n　　　return true\n　　endif\n　endif\n　return false\n\n○整数型: calcHash1(整数型: value)\n　return (value mod hashArrayの要素数) ＋ 1\n\n○整数型: calcHash2(整数型: value)\n　return ((value ＋ 3) mod hashArrayの要素数) ＋ 1\n\n○test()\n　hashArray ← {5個の －1}\n　add(3)\n　add(18)\n　add(11)\n",
     "choices": [
       {
         "text": "ア: {－1, 3, －1, 18, 11}",
@@ -1640,57 +1640,57 @@
       },
       {
         "text": "ウ: {－1, 11, －1, 18, －1}",
-        "explanation": "正解。関数 add の実行結果として正しい配置です。"
+        "explanation": "不正解。配列の要素の配置が異なります。"
       },
       {
         "text": "エ: {－1, 18, －1, 3, 11}",
-        "explanation": "不正解。配列の要素の配置が異なります。"
+        "explanation": "正解。add(3)でhashArray[4]に3を格納。次にadd(18)はcalcHash1で衝突するためcalcHash2を使いhashArray[2]に18を格納。最後にadd(11)もcalcHash1で衝突するためcalcHash2を使いhashArray[5]に11を格納します。この結果、最終的なhashArrayは{-1, 18, -1, 3, 11}となります。"
       },
       {
         "text": "オ: {－1, 18, 11, 3, －1}",
         "explanation": "不正解。配列の要素の配置が異なります。"
       }
     ],
-    "correctChoiceIndex": 2
+    "correctChoiceIndex": 3
   },
   {
     "id": 5,
-    "body": "次のプログラム中の「　a　」 と 「　b　」 に入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\nコサイン類似度は，二つのベクトルの向きの類似性を測る尺度である。\n関数 calcCosineSimilarity は，いずれも要素数が n(n≧1) である実数型の配列 vector1 と vector2 を受け取り，二つの配列のコサイン類似度を返す。配列 vector1 が {a1,a2, …, an}，配列 vector2 が {b1, b2, …, bn} のとき，コサイン類似度は次の数式で計算される。ここで，配列 vector1 と配列 vector2 のいずれも，全ての要素に 0 が格納されていることはないものとする。\n\n〔プログラム〕\n○実数型: calcCosineSimilarity(実数型の配列: vector1, 実数型の配列: vector2)\n 実数型: similarity, numerator, denominator, temp ← 0\n 整数型: i\n numerator ← 0\n\n for (i を 1 から vector1の要素数 まで 1 ずつ増やす)\n numerator ← numerator ＋ 「　a　」\nendfor\n\n for (i を 1 から vector1の要素数 まで 1 ずつ増やす)\ntemp ← temp ＋ vector1[i]の2乗\nendfor\ndenominator ← tempの正の平方根\n\ntemp ← 0\nfor (i を 1 から vector2の要素数 まで 1 ずつ増やす)\ntemp ← temp ＋ vector2[i]の2乗\nendfor\ndenominator ←「　b　」\n\nsimilarity ← numerator ÷ denominator\nreturn similarity",
+    "body": "次のプログラム中の(　a　) と (　b　) に入れる正しい答えの組合せを，解答群の中から選べ。ここで，配列の要素番号は 1 から始まる。\n\nコサイン類似度は，二つのベクトルの向きの類似性を測る尺度である。\n関数 calcCosineSimilarity は，いずれも要素数が n(n≧1) である実数型の配列 vector1 と vector2 を受け取り，二つの配列のコサイン類似度を返す。配列 vector1 が {a1,a2, …, an}，配列 vector2 が {b1, b2, …, bn} のとき，コサイン類似度は次の数式で計算される。ここで，配列 vector1 と配列 vector2 のいずれも，全ての要素に 0 が格納されていることはないものとする。\n\na₁b₁+a₂b₂+⋯+anbn ÷ √a²₁+a²₂+⋯+a²n×√b²₁+b²₂+⋯+b²n\n\n〔プログラム〕\n○実数型: calcCosineSimilarity(実数型の配列: vector1, 実数型の配列: vector2)\n　実数型: similarity, numerator, denominator, temp ← 0\n　整数型: i\n　numerator ← 0\n\n　for (i を 1 から vector1の要素数 まで 1 ずつ増やす)\n　　numerator ← numerator ＋ (　a　)\n　endfor\n\n　for (i を 1 から vector1の要素数 まで 1 ずつ増やす)\n　　temp ← temp ＋ vector1[i]の2乗\n　endfor\n　denominator ← tempの正の平方根\n\n　temp ← 0\n　for (i を 1 から vector2の要素数 まで 1 ずつ増やす)\n　　temp ← temp ＋ vector2[i]の2乗\n　endfor\n　denominator ←(　b　)\n\n　similarity ← numerator ÷ denominator\n　return similarity",
     "choices": [
       {
-        "text": "ア: a「(vector1[i] × vector2[i])の正の 平方根」/ b「denominator × (tempの正の平方根)」",
+        "text": "ア: a「(vector1[i] × vector2[i])の正の平方根」, b「denominator × (tempの正の平方根)」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "イ: a「(vector1[i] × vector2[i])の正の 平方根」/ b 「denominator ＋ (tempの正の平方根)」",
+        "text": "イ: a「(vector1[i] × vector2[i])の正の平方根」, b 「denominator ＋ (tempの正の平方根)」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "ウ: a「 (vector1[i] × vector2[i])の正の 平方根 」/ b「 tempの正の平方根」",
+        "text": "ウ: a「 (vector1[i] × vector2[i])の正の平方根 」, b「 tempの正の平方根」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "エ: a「 vector1[i] × vector2[i] 」/ b「 denominator × (tempの正の平方根)」",
-        "explanation": "正解。コサイン類似度の計算式として正しいです。"
+        "text": "エ: a「 vector1[i] × vector2[i] 」,b「 denominator × (tempの正の平方根)」",
+        "explanation": "正解。コサイン類似度を計算するには、数式の通りに、分子は対応する要素同士を掛けたものの合計（vector1[i] × vector2[i] ）、分母はそれぞれのベクトルの長さ（2乗の合計の平方根）を掛け合わせたもの（denominator × (tempの正の平方根)）が必要です。プログラムはこれを順番に計算しています。"
       },
       {
-        "text": "オ: a「vector1[i] × vector2[i]」/ b「denominator ＋ (tempの正の平方根)」",
+        "text": "オ: a「vector1[i] × vector2[i]」, b「denominator ＋ (tempの正の平方根)」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "カ: a「vector1[i] × vector2[i]」/ b「tempの正の平方根」",
+        "text": "カ: a「vector1[i] × vector2[i]」, b「tempの正の平方根」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "キ: a「vector1[i]の2乗」/ b「denominator × (tempの正の平方根)」",
+        "text": "キ: a「vector1[i]の2乗」, b「denominator × (tempの正の平方根)」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "ク: a「vector1[i]の2乗」/ b「denominator ＋ (tempの正の平方根)」",
+        "text": "ク: a「vector1[i]の2乗」, b「denominator ＋ (tempの正の平方根)」",
         "explanation": "不正解。計算式が異なります。"
       },
       {
-        "text": "ケ: a「vector1[i]の2乗」/ b「tempの正の平方根」",
+        "text": "ケ: a「vector1[i]の2乗」, b「tempの正の平方根」",
         "explanation": "不正解。計算式が異なります。"
       }
     ],
@@ -1698,26 +1698,26 @@
   },
   {
     "id": 6,
-    "body": "A 社は，放送会社や運輸会社向けに広告制作ビジネスを展開している。A 社は，人事業務の効率化を図るべく，人事業務の委託を検討することにした。A 社が委託する業務（以下，B 業務という）を下記「」 に示す。\n\n「・採用予定者から郵送されてくる入社時の誓約書，前職の源泉徴収票などの書類を PDF ファイルに変換し，ファイルサーバに格納する。\n（省略）」\n\n委託先候補の C 社は，B 業務について，次のように A 社に提案した。\n・B 業務だけに従事する専任の従業員を割り当てる。\n・B 業務では，下記「」 の複合機のスキャン機能を使用する。\n\n「・スキャン機能を使用する際は，従業員ごとに付与した利用者 ID とパスワードをパネルに入力する。\n・スキャンしたデータを PDF ファイルに変換する。\n・PDF ファイルを従業員ごとに異なる鍵で暗号化して，電子メールに添付する。\n・スキャンを実行した本人宛てに電子メールを送信する。\n・PDF ファイルが大きい場合は，PDF ファイルを添付する代わりに，自社の社内ネットワーク上に設置したサーバ（以下，B サーバという）※¹ に自動的に保存し，保存先の URL を電子メールの本文に記載して送信する。」\n注 ※¹B サーバにアクセスする際は，従業員ごとの利用者 ID とパスワードが必要になる。\n\nA 社は，C 社と業務委託契約を締結する前に，秘密保持契約を締結した。その後，C社に質問表を送付し，回答を受けて，業務委託での情報セキュリティリスクの評価を実施した。その結果，下記「」 の発見があった。\n\n「・複合機のスキャン機能では，電子メールの差出人アドレス，件名，本文及び添付ファイル名を初期設定 ※¹ の状態で使用しており，誰がスキャンを実行しても同じである。\n・複合機のスキャン機能の初期設定情報はベンダーの Web サイトで公開されており，誰でも閲覧できる。」\n注 ※¹ 複合機の初期設定は C 社の情報システム部だけが変更可能である。\n\nそこで，A 社では，初期設定の状態のままでは A 社にとって情報セキュリティリスクがあり，初期設定から更するという対策が必要であると評価した。\n\n設問 対策が必要であると A 社が評価した情報セキュリティリスクはどれか。解答群のうち，最も適切なものを選べ。",
+    "body": "A 社は，放送会社や運輸会社向けに広告制作ビジネスを展開している。A 社は，人事業務の効率化を図るべく，人事業務の委託を検討することにした。A 社が委託する業務（以下，B 業務という）を図 1に示す。\n\n<div style=\"border: 2px solid #333; padding: 10px; display: inline-block;background-color: white;\">採用予定者から郵送されてくる入社時の誓約書，前職の源泉徴収票などの書類を PDF ファイルに変換し，ファイルサーバに格納する。</div><p style=\"text-align: center;\">図 1　B 業務</P>\n委託先候補の C 社は，B 業務について，次のように A 社に提案した。\n・B 業務だけに従事する専任の従業員を割り当てる。\n・B 業務では，図 2 の複合機のスキャン機能を使用する。\n\n<div style=\"border: 2px solid #333; padding: 10px; display: inline-block;background-color: white;\">・スキャン機能を使用する際は，従業員ごとに付与した利用者 ID とパスワードをパネルに入力する。\n・スキャンしたデータを PDF ファイルに変換する。\n・PDF ファイルを従業員ごとに異なる鍵で暗号化して，電子メールに添付する。\n・スキャンを実行した本人宛てに電子メールを送信する。\n・PDF ファイルが大きい場合は，PDF ファイルを添付する代わりに，自社の社内ネットワーク上に設置したサーバ（以下，B サーバという）※¹ に自動的に保存し，保存先の URL を電子メールの本文に記載して送信する。</div><P>注 ※¹B サーバにアクセスする際は，従業員ごとの利用者 ID とパスワードが必要になる。</P><p style=\"text-align: center;\">図 2　複合機のスキャン機能（抜粋）</P>\n\nA 社は，C 社と業務委託契約を締結する前に，秘密保持契約を締結した。その後，C社に質問表を送付し，回答を受けて，業務委託での情報セキュリティリスクの評価を実施した。その結果，図 3 の発見があった。\n\n<div style=\"border: 2px solid #333; padding: 10px; display: inline-block;background-color: white;\">・複合機のスキャン機能では，電子メールの差出人アドレス，件名，本文及び添付ファイル名を初期設定 ※¹ の状態で使用しており，誰がスキャンを実行しても同じである。\n・複合機のスキャン機能の初期設定情報はベンダーの Web サイトで公開されており，誰でも閲覧できる。</div><P>注 ※¹ 複合機の初期設定は C 社の情報システム部だけが変更可能である。</P><p style=\"text-align: center;\">図 3　発見事項</P>\nそこで，A 社では，初期設定の状態のままでは A 社にとって情報セキュリティリスクがあり，初期設定から更するという対策が必要であると評価した。\n\n設問 対策が必要であると A 社が評価した情報セキュリティリスクはどれか。解答群のうち，最も適切なものを選べ。",
     "choices": [
       {
         "text": "ア: B 業務に従事する従業員が，攻撃者からの電子メールを複合機からのものと信じて本文中にある URL をクリックし，フィッシングサイトに誘導される。その結果，A 社の採用予定者の個人情報が漏えいする。",
-        "explanation": "不正解。B 業務に従事する従業員がフィッシングサイトに誘導されることは、情報セキュリティリスクの一つですが、設問の文脈では直接的なリスクとして評価されていません。"
+        "explanation": "正解。複合機のメール設定が公開されており、誰でも正規のメールを装えるため、攻撃者は偽装メールで従業員をフィッシングサイトへ誘導し、個人情報を漏えいさせるリスクがあります。これは、図3の発見事項が直接的に引き起こす深刻なリスクです。"
       },
       {
         "text": "イ: B 業務に従事する従業員が，複合機から送信される電子メールをスパムメールと誤認し，電子メールを削除する。その結果，再スキャンが必要となり，B 業務が遅延する。",
-        "explanation": "不正解。業務の遅延は業務効率の問題であり、情報セキュリティリスクとしては直接的に評価されていません。"
+        "explanation": "不正解。業務遅延は情報セキュリティリスク（情報漏えい、改ざん、利用妨害など）とは異なります。可用性の問題であり、本設問の文脈とは合致しません。"
       },
       {
         "text": "ウ: 攻撃者が，複合機から送信される電子メールを盗聴し，添付ファイルを暗号化して身代金を要求する。その結果，A 社が復号鍵を受け取るために多額の身代金を支払うことになる。",
-        "explanation": "不正解。これはランサムウェア攻撃の一例であり、情報セキュリティリスクとしては考えられますが、設問の文脈では直接的なリスクとして評価されていません。"
+        "explanation": "不正解。PDFファイルは「従業員ごとに異なる鍵で暗号化」されています。攻撃者がメールを盗聴できたとしても、すでに暗号化されているファイルを「暗号化して身代金を要求する」のは不自然です。復号鍵がなければ意味がありません。"
       },
       {
         "text": "エ: 攻撃者が，複合機から送信される電子メールを盗聴し，本文に記載されている URL を使って B サーバにアクセスする。その結果，A 社の採用予定者の個人情報が漏えいする。",
-        "explanation": "正解。複合機の初期設定情報が公開されているため、攻撃者が容易にアクセスできる状態にあり、情報セキュリティリスクとして評価されています。"
+        "explanation": "不正解。Bサーバへのアクセスには「従業員ごとの利用者IDとパスワードが必要」と明記されています。メールの盗聴だけでは、認証情報がないためBサーバにアクセスすることはできません。"
       }
     ],
-    "correctChoiceIndex": 3
+    "correctChoiceIndex": 0
   }
 ]
 }
